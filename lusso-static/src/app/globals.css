@@ -312,7 +312,21 @@
 }
 
 /* -------------------------------------------------------------------
-   6. TAILWIND CUSTOM THEME INTEGRATION
+   6. ANIMATION SYSTEM - Keyframes & Custom Animations
+   ------------------------------------------------------------------- */
+
+/* Aurora Background Animation */
+@keyframes aurora {
+  from { 
+    background-position: 50% 50%, 50% 50%; 
+  }
+  to { 
+    background-position: 350% 50%, 350% 50%; 
+  }
+}
+
+/* -------------------------------------------------------------------
+   7. TAILWIND CUSTOM THEME INTEGRATION
    ------------------------------------------------------------------- */
 
 @theme {
@@ -331,4 +345,7 @@
   --font-sans: var(--font-system);
   --font-serif: var(--font-display);
   --font-mono: var(--font-mono);
+  
+  /* Animations */
+  --animate-aurora: aurora 60s linear infinite;
 }

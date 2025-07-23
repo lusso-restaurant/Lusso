@@ -2,6 +2,8 @@
 
 import { ThemeSwitch } from '@/components/ui/theme-switch';
 import { Button } from '@/components/ui/button';
+import { AuroraBackground } from '@/components/ui/aurora-background';
+import { motion } from 'motion/react';
 
 function DesignSystemDemo() {
   return (
@@ -312,6 +314,79 @@ function DesignSystemDemo() {
               >
                 $45
               </div>
+            </div>
+          </section>
+
+          {/* Aurora Background Demo */}
+          <section style={{ marginTop: 'var(--space-16)' }}>
+            <h2 
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'var(--font-size-3xl)',
+                fontWeight: 'var(--font-weight-semibold)',
+                marginBottom: 'var(--space-8)',
+                color: 'var(--color-text-primary)',
+              }}
+            >
+              Aurora Background Component
+            </h2>
+            
+            <div style={{ 
+              height: '400px', 
+              borderRadius: 'var(--radius-lg)',
+              overflow: 'hidden',
+              position: 'relative',
+              border: '1px solid var(--color-border)'
+            }}>
+              <AuroraBackground>
+                <motion.div
+                  initial={{ opacity: 0.0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.8,
+                    ease: "easeInOut"
+                  }}
+                  style={{ 
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 'var(--space-4)',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 'var(--space-4)',
+                    textAlign: 'center',
+                    zIndex: 10
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'var(--font-size-4xl)',
+                      fontWeight: 'var(--font-weight-bold)',
+                      color: 'var(--color-text-primary)',
+                      marginBottom: 'var(--space-2)',
+                    }}
+                  >
+                    Welcome to Lusso
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: 'var(--font-size-lg)',
+                      color: 'var(--color-text-secondary)',
+                      maxWidth: '600px',
+                      lineHeight: 'var(--line-height-relaxed)',
+                    }}
+                  >
+                    Experience culinary excellence with our aurora-powered hero section. 
+                    Perfect for restaurant landing pages with dynamic, theme-aware backgrounds.
+                  </p>
+                  <Button style={{ marginTop: 'var(--space-4)' }}>
+                    Make Reservation
+                  </Button>
+                </motion.div>
+              </AuroraBackground>
             </div>
           </section>
         </div>
