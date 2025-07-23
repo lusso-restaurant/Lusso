@@ -1,35 +1,75 @@
-// Example of how to use your modular components
-import { Header } from '@/components/layout/header';
-import { ProductCard } from '@/components/data-display/product-card';
-import { ContactForm } from '@/components/forms/contact-form';
-
-export default function Home() {
-  const sampleProduct = {
-    id: '1',
-    name: 'Luxury Watch',
-    description: 'Premium timepiece with elegant design',
-    price: 299.99
-  };
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header title="Lusso Store" />
-      
-      <main className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-8">Welcome to Your Modular Components Demo</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Product Example</h3>
-            <ProductCard product={sampleProduct} />
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Contact Form Example</h3>
-            <ContactForm />
-          </div>
-        </div>
-      </main>
+    <div style={{ minHeight: '100vh' }}>
+      {/* Header Section - Red */}
+      <div style={{
+        height: '80px',
+        backgroundColor: '#FF6B6B',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: '1.5rem',
+        fontWeight: 'bold'
+      }}>
+        HEADER
+      </div>
+
+      {/* Hero Section - Blue */}
+      <div style={{
+        height: '400px',
+        backgroundColor: '#4ECDC4',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: '2rem',
+        fontWeight: 'bold'
+      }}>
+        HERO SECTION
+      </div>
+
+      {/* Content Section - Green */}
+      <div style={{
+        height: '300px',
+        backgroundColor: '#45B7D1',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: '1.5rem',
+        fontWeight: 'bold'
+      }}>
+        MAIN CONTENT
+      </div>
+
+      {/* Features Section - Purple */}
+      <div style={{
+        height: '250px',
+        backgroundColor: '#9B59B6',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: '1.5rem',
+        fontWeight: 'bold'
+      }}>
+        FEATURES
+      </div>
+
+      {/* Footer Section - Orange */}
+      <div style={{
+        height: '120px',
+        backgroundColor: '#F39C12',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: '1.5rem',
+        fontWeight: 'bold'
+      }}>
+        FOOTER
+      </div>
     </div>
   );
 }

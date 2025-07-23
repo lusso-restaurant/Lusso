@@ -15,27 +15,10 @@ Transform Lusso luxury restaurant website from a dynamic Three.js-powered applic
 - Sub-2 second initial load on mobile 3G
 - 100% mobile-responsive design
 - Zero server infrastructure costs
-- Maintains existing visual design language
 
 ## 2. Technical Stack
 
-### Core Technologies
-- **Framework**: Next.js 15+ with App Router
-- **Styling**: Tailwind CSS with custom design system
-- **Language**: TypeScript for type safety
-- **Deployment**: Static export (`output: 'export'`)
-- **Development**: Turbopack for fast dev builds
-
-### Key Dependencies
-```json
-{
-  "next": "^15.3.5",
-  "react": "^18.3.1",
-  "tailwindcss": "^3.4.0",
-  "typescript": "^5.0.0",
-  "@types/react": "^18.3.0"
-}
-```
+The definitive technology stack is maintained in the project [README.md](README.md).
 
 ## 3. Architecture & Component System
 
@@ -60,69 +43,16 @@ Transform Lusso luxury restaurant website from a dynamic Three.js-powered applic
 │       └── index.ts           # TypeScript definitions
 ```
 
-### 3.2 Component Architecture
-
-#### Core Layout Components
-1. **ScrollNavigation**: Virtual scroll container with section-based navigation
-2. **StickyHeader**: Sticky navigation that appears on scroll
-3. **ModalManager**: Handles reservation and menu modals
-4. **MobileNavigation**: Touch-optimized mobile navigation
-
-#### Content Components
-1. **HeroSection**: Main landing with call-to-action buttons
-2. **StorySection**: Restaurant narrative and imagery
-3. **MenuSection**: Menu categories and item displays
-4. **ContactSection**: Reservation form and contact information
-
-#### UI Components
-1. **Button**: Consistent button styling with variants
-2. **Modal**: Reusable modal with backdrop blur
-3. **FormField**: Standardized form inputs
-4. **TabSystem**: Menu category navigation
-5. **Card**: Content display cards
 
 ### 3.3 State Management Strategy
 - **React State**: Local component state for UI interactions
 - **URL State**: Next.js routing for section navigation
-- **Form State**: Controlled components for form handling
-- **Modal State**: Context API for modal management
+- **Theme State**: CSS custom properties for theme switching
+- **Modal State**: Simple state for menu modals
 
 ## 4. Design System Implementation
 
-### 4.1 Color Palette (Tailwind Custom Colors)
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        'matte-white': '#f4f4f4',
-        'glossy-gold': '#D4AF37',
-        'matte-gold': '#b2935b',
-        'dark-blue': '#0A2342',
-        'text-primary': '#2c3e50',
-      }
-    }
-  }
-}
-```
-
-### 4.2 Typography System
-- **Primary**: Playfair Display (serif) for headings
-- **Secondary**: Lato (sans-serif) for body text
-- **Scale**: Responsive typography using Tailwind's responsive classes
-
-### 4.3 Responsive Breakpoints
-```javascript
-// Mobile-first approach
-screens: {
-  'sm': '640px',   // Small devices
-  'md': '768px',   // Medium devices  
-  'lg': '1024px',  // Large devices
-  'xl': '1280px',  // Extra large
-  '2xl': '1536px'  // 2X large
-}
-```
+All design system specifications, including colors, typography, and spacing, are maintained in [DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md).
 
 ## 5. Feature Requirements
 
@@ -140,11 +70,11 @@ screens: {
 
 ### 5.2 Modal System
 
-#### Reservation Modal
+#### Contact Information Modal
 - **Trigger**: CTA buttons throughout the site
-- **Content**: Contact form with validation
+- **Content**: Phone number, address, and hours for reservations
 - **Behavior**: Backdrop blur, click-outside-to-close
-- **Mobile**: Full-screen on mobile devices
+- **Mobile**: Full-screen on mobile devices with call links
 
 #### Menu Modal
 - **Trigger**: Menu buttons and navigation
@@ -172,17 +102,17 @@ screens: {
 - **Mobile**: Horizontal scrolling tabs
 
 #### Contact Section
-- **Form**: Contact form with validation
-- **Map**: Static map image or embedded map
-- **Information**: Hours, location, contact details
+- **Information**: Phone number prominently displayed
+- **Language**: Romanian content ("Curand! Inca lucram la website")
+- **Details**: Essential business information only
 
-### 5.4 Form Handling
+### 5.4 Communication Strategy
 
-#### Contact/Reservation Form
-- **Fields**: Name, email, phone, date, time, party size, special requests
-- **Validation**: Client-side validation with error messages
-- **Submission**: Static form submission (Netlify Forms, Formspree, etc.)
-- **Feedback**: Success/error states with animations
+#### Phone-Based Contact
+- **Primary**: Phone calls for in-location communication
+- **Secondary**: WhatsApp messages on same number
+- **Implementation**: Phone icon/SVG redirects to phone app with number
+- **No Forms**: Static website with no form handling required
 
 ## 6. Performance Requirements
 
@@ -335,5 +265,5 @@ npm run start
 ---
 
 **Document Version**: 1.0  
-**Last Updated**: July 11, 2025  
+**Last Updated**: July 23, 2025  
 **Next Review**: After Phase 1 completion

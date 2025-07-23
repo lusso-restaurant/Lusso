@@ -1,2 +1,1 @@
-// Layout Components
-export { Header } from './header';
+// Layout component exports placeholder

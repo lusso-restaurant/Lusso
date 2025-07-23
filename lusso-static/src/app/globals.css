@@ -1,122 +1,334 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* ===================================================================
+   LUSSO DESIGN SYSTEM - ULTRA MODULAR FOUNDATION
+   =================================================================== */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+/* -------------------------------------------------------------------
+   1. COLOR SYSTEM - Semantic & Swappable Themes
+   ------------------------------------------------------------------- */
+
+/* Base Palette - Brand Colors */
+:root {
+  /* Lusso Brand Palette */
+  --brand-matte-white: #f4f4f4;
+  --brand-glossy-gold: #d4af37;
+  --brand-matte-gold: #b2935b;
+  --brand-dark-blue: #0a2342;
+  --brand-charcoal: #2c3e50;
+  
+  /* Neutral Palette */
+  --neutral-50: #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d4d4d8;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-900: #18181b;
+  --neutral-950: #09090b;
 }
+
+/* Theme: Default Luxury */
+[data-theme="luxury"], :root {
+  /* Semantic Color Tokens */
+  --color-primary: var(--brand-glossy-gold);
+  --color-primary-hover: var(--brand-matte-gold);
+  --color-primary-contrast: var(--neutral-50);
+  
+  --color-secondary: var(--brand-dark-blue);
+  --color-secondary-hover: #0d2a4a;
+  --color-secondary-contrast: var(--neutral-50);
+  
+  --color-accent: var(--brand-matte-gold);
+  --color-accent-hover: #9a7c4a;
+  --color-accent-contrast: var(--neutral-50);
+  
+  /* Surface Colors */
+  --color-background: var(--neutral-50);
+  --color-surface: var(--neutral-100);
+  --color-surface-elevated: var(--neutral-50);
+  --color-surface-overlay: rgba(0, 0, 0, 0.8);
+  
+  /* Text Colors */
+  --color-text-primary: var(--brand-charcoal);
+  --color-text-secondary: var(--neutral-600);
+  --color-text-muted: var(--neutral-500);
+  --color-text-inverse: var(--neutral-50);
+  
+  /* Border & Outline */
+  --color-border: var(--neutral-200);
+  --color-border-focus: var(--brand-glossy-gold);
+  --color-outline: var(--brand-glossy-gold);
+  
+  /* Status Colors */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+}
+
+/* Theme: Dark Luxury */
+[data-theme="dark"] {
+  --color-primary: var(--brand-glossy-gold);
+  --color-primary-hover: var(--brand-matte-gold);
+  --color-primary-contrast: var(--neutral-900);
+  
+  --color-secondary: var(--brand-matte-gold);
+  --color-secondary-hover: var(--brand-glossy-gold);
+  --color-secondary-contrast: var(--neutral-900);
+  
+  --color-accent: var(--brand-glossy-gold);
+  --color-accent-hover: #e6c347;
+  --color-accent-contrast: var(--neutral-900);
+  
+  --color-background: var(--neutral-900);
+  --color-surface: var(--neutral-800);
+  --color-surface-elevated: var(--neutral-700);
+  --color-surface-overlay: rgba(0, 0, 0, 0.9);
+  
+  --color-text-primary: var(--neutral-50);
+  --color-text-secondary: var(--neutral-300);
+  --color-text-muted: var(--neutral-400);
+  --color-text-inverse: var(--neutral-900);
+  
+  --color-border: var(--neutral-700);
+  --color-border-focus: var(--brand-glossy-gold);
+  --color-outline: var(--brand-glossy-gold);
+}
+
+/* Theme: Minimal */
+[data-theme="minimal"] {
+  --color-primary: var(--neutral-900);
+  --color-primary-hover: var(--neutral-700);
+  --color-primary-contrast: var(--neutral-50);
+  
+  --color-secondary: var(--neutral-600);
+  --color-secondary-hover: var(--neutral-500);
+  --color-secondary-contrast: var(--neutral-50);
+  
+  --color-accent: var(--brand-matte-gold);
+  --color-accent-hover: var(--brand-glossy-gold);
+  --color-accent-contrast: var(--neutral-50);
+  
+  --color-background: var(--neutral-50);
+  --color-surface: var(--neutral-100);
+  --color-surface-elevated: var(--neutral-50);
+  --color-surface-overlay: rgba(0, 0, 0, 0.5);
+  
+  --color-text-primary: var(--neutral-900);
+  --color-text-secondary: var(--neutral-600);
+  --color-text-muted: var(--neutral-500);
+  --color-text-inverse: var(--neutral-50);
+  
+  --color-border: var(--neutral-200);
+  --color-border-focus: var(--neutral-400);
+  --color-outline: var(--neutral-400);
+}
+
+/* -------------------------------------------------------------------
+   2. TYPOGRAPHY SYSTEM
+   ------------------------------------------------------------------- */
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Font Families */
+  --font-display: var(--font-playfair), "Playfair Display", serif;
+  --font-body: var(--font-lato), "Lato", sans-serif;
+  --font-mono: var(--font-geist-mono), "JetBrains Mono", monospace;
+  --font-system: var(--font-geist-sans), system-ui, sans-serif;
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  
+  /* Font Sizes - Fluid Typography */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --font-size-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  --font-size-5xl: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+  --font-size-6xl: clamp(3.75rem, 3rem + 3.75vw, 5rem);
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+/* -------------------------------------------------------------------
+   3. SPACING & LAYOUT SYSTEM
+   ------------------------------------------------------------------- */
+
+:root {
+  /* Base Spacing Unit */
+  --space-unit: 0.25rem; /* 4px */
+  
+  /* Spacing Scale */
+  --space-px: 1px;
+  --space-0: 0;
+  --space-1: calc(var(--space-unit) * 1); /* 4px */
+  --space-2: calc(var(--space-unit) * 2); /* 8px */
+  --space-3: calc(var(--space-unit) * 3); /* 12px */
+  --space-4: calc(var(--space-unit) * 4); /* 16px */
+  --space-5: calc(var(--space-unit) * 5); /* 20px */
+  --space-6: calc(var(--space-unit) * 6); /* 24px */
+  --space-8: calc(var(--space-unit) * 8); /* 32px */
+  --space-10: calc(var(--space-unit) * 10); /* 40px */
+  --space-12: calc(var(--space-unit) * 12); /* 48px */
+  --space-16: calc(var(--space-unit) * 16); /* 64px */
+  --space-20: calc(var(--space-unit) * 20); /* 80px */
+  --space-24: calc(var(--space-unit) * 24); /* 96px */
+  --space-32: calc(var(--space-unit) * 32); /* 128px */
+  --space-40: calc(var(--space-unit) * 40); /* 160px */
+  --space-48: calc(var(--space-unit) * 48); /* 192px */
+  --space-56: calc(var(--space-unit) * 56); /* 224px */
+  --space-64: calc(var(--space-unit) * 64); /* 256px */
+  
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;
+  --radius-base: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-base: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  
+  /* Z-Index Scale */
+  --z-auto: auto;
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
 }
+
+/* -------------------------------------------------------------------
+   4. ANIMATION SYSTEM
+   ------------------------------------------------------------------- */
+
+:root {
+  /* Timing Functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  
+  /* Duration Scale */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 750ms;
+}
+
+/* -------------------------------------------------------------------
+   5. BASE STYLES
+   ------------------------------------------------------------------- */
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-system);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    transition: background-color var(--duration-normal) var(--ease-out),
+                color var(--duration-normal) var(--ease-out);
   }
+  
+  /* Focus Styles */
+  :focus-visible {
+    outline: 2px solid var(--color-outline);
+    outline-offset: 2px;
+  }
+  
+  /* Selection Styles */
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+  }
+  
+  /* Smooth Transitions for Theme Changes */
+  * {
+    transition-property: color, background-color, border-color, box-shadow, opacity;
+    transition-duration: var(--duration-normal);
+    transition-timing-function: var(--ease-out);
+  }
+}
+
+/* -------------------------------------------------------------------
+   6. TAILWIND CUSTOM THEME INTEGRATION
+   ------------------------------------------------------------------- */
+
+@theme {
+  /* Integrate our custom properties with Tailwind */
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-contrast);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-contrast);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-text-primary);
+  --color-muted: var(--color-surface);
+  --color-muted-foreground: var(--color-text-muted);
+  --color-border: var(--color-border);
+  
+  /* Font families */
+  --font-sans: var(--font-system);
+  --font-serif: var(--font-display);
+  --font-mono: var(--font-mono);
 }

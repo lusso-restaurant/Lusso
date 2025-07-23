@@ -1,3 +1,1 @@
-// Feedback Components
-// Example: export { Toast } from './toast';
-// Example: export { LoadingSpinner } from './loading-spinner';
+// Feedback component exports placeholder
