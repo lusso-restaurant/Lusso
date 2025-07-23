@@ -89,3 +89,12 @@ temp/
 
 # Claude
 .claude/
+
+# Prevent accidental documentation commits
+*-mcp.md
+playwright*.md
+
+# Root level package files (projects should be in subdirectories)
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
