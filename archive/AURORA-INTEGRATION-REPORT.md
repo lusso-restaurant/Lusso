@@ -200,7 +200,7 @@ export * from './ui';  // AuroraBackground included
 ### 4. Demo Implementation
 **Added to `/mockup` page:**
 ```tsx
-import { AuroraBackground } from '@/components';
+import { AuroraBackground } from '@/components/ui/aurora-background';
 
 <AuroraBackground>
   <motion.div animate={{ opacity: 1, y: 0 }}>
@@ -271,7 +271,7 @@ The Aurora Background component is now fully integrated and ready for use in:
 
 ## 📝 Usage Example
 ```tsx
-import { AuroraBackground } from '@/components';
+import { AuroraBackground } from '@/components/ui/aurora-background';
 
 <AuroraBackground>
   <YourContent />
