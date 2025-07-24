@@ -1,33 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Lato } from "next/font/google";
+import { DM_Serif_Display, Lato } from "next/font/google";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
 
-// System fonts
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Luxury fonts for Lusso - optimized selection
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
   subsets: ["latin"],
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-// Luxury fonts for Lusso
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700", "900"],
+  weight: ["400"],
 });
 
 const lato = Lato({
   variable: "--font-lato",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "700", "900"],
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -41,11 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="luxury">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${lato.variable} antialiased`}
+        className={`${dmSerifDisplay.variable} ${lato.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider defaultTheme="luxury" storageKey="lusso-theme">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

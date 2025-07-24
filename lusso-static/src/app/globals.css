@@ -134,10 +134,10 @@
 
 :root {
   /* Font Families */
-  --font-display: var(--font-playfair), "Playfair Display", serif;
+  --font-display: var(--font-dm-serif-display), "DM Serif Display", serif;
   --font-body: var(--font-lato), "Lato", sans-serif;
-  --font-mono: var(--font-geist-mono), "JetBrains Mono", monospace;
-  --font-system: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-system: system-ui, sans-serif;
   
   /* Font Weights */
   --font-weight-light: 300;
