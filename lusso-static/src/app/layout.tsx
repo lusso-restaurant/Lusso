@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Lato } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { Header } from "@/components/layout/header";
 import "./globals.css";
 
 // Luxury fonts for Lusso - optimized selection
@@ -34,7 +35,10 @@ export default function RootLayout({
         className={`${dmSerifDisplay.variable} ${lato.variable} antialiased`}
       >
         <ThemeProvider defaultTheme="light" storageKey="lusso-theme">
-          {children}
+          <Header />
+          <main style={{ paddingTop: '6rem' }}>
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
