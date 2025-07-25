@@ -12,7 +12,7 @@ import type { ThemeName, ThemeContextValue } from '@/types/design-system';
  * @example
  * ```tsx
  * // Wrap your app
- * <ThemeProvider defaultTheme="luxury">
+ * <ThemeProvider defaultTheme="light">
  *   <App />
  * </ThemeProvider>
  * 
@@ -31,7 +31,7 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({
   children,
-  defaultTheme = 'luxury',
+  defaultTheme = 'light',
   storageKey = 'lusso-theme',
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<ThemeName>(defaultTheme);
@@ -40,7 +40,7 @@ export function ThemeProvider({
   // Hydrate theme from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem(storageKey) as ThemeName;
-    if (stored && ['luxury', 'dark', 'minimal'].includes(stored)) {
+    if (stored && ['light', 'dark'].includes(stored)) {
       setThemeState(stored);
     }
     setMounted(true);
@@ -65,7 +65,7 @@ export function ThemeProvider({
   };
 
   const toggleTheme = () => {
-    const themes: ThemeName[] = ['luxury', 'dark', 'minimal'];
+    const themes: ThemeName[] = ['light', 'dark'];
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
     setTheme(themes[nextIndex]);
@@ -143,9 +143,8 @@ export function ThemeSwitch({ className = '', showLabels = true }: ThemeSwitchPr
   }
 
   const themes: { name: ThemeName; label: string; icon: string }[] = [
-    { name: 'luxury', label: 'Luxury', icon: '✨' },
+    { name: 'light', label: 'Light', icon: '☀️' },
     { name: 'dark', label: 'Dark', icon: '🌙' },
-    { name: 'minimal', label: 'Minimal', icon: '⚪' },
   ];
 
   return (

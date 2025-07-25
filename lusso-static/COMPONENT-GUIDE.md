@@ -301,7 +301,7 @@ Add restaurant-specific theme tokens:
 
 ```css
 /* In globals.css */
-[data-theme="luxury"] {
+[data-theme="light"] {
   --color-menu-highlight: var(--brand-glossy-gold);
   --color-reservation-success: #22c55e;
   --color-special-offer: #f59e0b;

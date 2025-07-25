@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${dmSerifDisplay.variable} ${lato.variable} antialiased`}
       >
-        <ThemeProvider defaultTheme="luxury" storageKey="lusso-theme">
+        <ThemeProvider defaultTheme="light" storageKey="lusso-theme">
           {children}
         </ThemeProvider>
       </body>

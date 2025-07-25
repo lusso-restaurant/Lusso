@@ -20,7 +20,7 @@ The Lusso restaurant website is a luxury dining web experience built with an **u
 ### ✅ **Ultra-Modular Design System**
 We've created a comprehensive design system foundation that serves as the backbone for all restaurant components:
 
-- **🎨 3 Complete Themes**: Luxury (default), Dark, Minimal with seamless switching
+- **🎨 2 Complete Themes**: Light (default), Dark with seamless switching
 - **📝 Typography System**: DM Serif Display with fluid responsive scaling  
 - **🎡 Color Architecture**: Semantic tokens supporting unlimited theme variations
 - **📏 Design Tokens**: Complete spacing, animation, and layout systems
@@ -242,7 +242,7 @@ npm run dev  # Access at http://localhost:3000
 ## 📊 Success Metrics
 
 ### **Technical Achievements ✅**
-- [x] Ultra-modular design system with 3 working themes
+- **Ultra-modular design system with 2 working themes
 - [x] Type-safe component architecture 
 - [x] Static export compatibility (GitHub Pages ready)
 - [x] Mobile-first responsive design
@@ -259,7 +259,7 @@ npm run dev  # Access at http://localhost:3000
 ## 🎭 Current Demo Features
 
 **Live at `npm run dev`:**
-- **Theme Switching**: Toggle between Luxury, Dark, Minimal themes instantly
+- **Theme Switching**: Toggle between Light, Dark themes instantly
 - **Typography Showcase**: See DM Serif Display font in action
 - **Color System**: Complete semantic color palette demonstration
 - **Component Integration**: shadcn/ui components with theme integration
@@ -273,7 +273,7 @@ npm run dev  # Access at http://localhost:3000
 
 **What We've Built**:
 - ✅ Ultra-modular component architecture
-- ✅ 3 complete working themes with seamless switching
+- **2 complete working themes with seamless switching
 - ✅ Type-safe development environment
 - ✅ Comprehensive component research (60+ restaurant-specific components)
 - ✅ Static export optimization for zero-cost hosting

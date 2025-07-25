@@ -16,7 +16,7 @@ The Lusso restaurant website is a luxury dining web experience built with an **u
 
 We've built a comprehensive ultra-modular design system that serves as the foundation for the luxury restaurant website:
 
-- **🎨 Theme System**: 3 complete themes (Luxury, Dark, Minimal) with seamless switching
+- **🎨 Theme System**: 2 complete themes (Light, Dark) with seamless switching
 - **📝 Typography**: Luxury fonts (DM Serif Display) with fluid responsive scaling
 - **🎡 Color Tokens**: Semantic color system supporting unlimited theme variations
 - **📏 Design Tokens**: Complete spacing, animation, and layout system
@@ -44,7 +44,7 @@ We've built a comprehensive ultra-modular design system that serves as the found
 
 ## 🎨 Design System Features
 
-Our ultra-modular design system provides theme-aware components that automatically adapt using CSS custom properties, enabling seamless switching between Luxury, Dark, and Minimal themes with zero JavaScript overhead. For a complete guide to design tokens and themes, see [DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md).
+Our ultra-modular design system provides theme-aware components that automatically adapt using CSS custom properties, enabling seamless switching between Light and Dark themes with zero JavaScript overhead. For a complete guide to design tokens and themes, see [DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md).
 
 ## 📁 Project Structure
 
@@ -95,7 +95,7 @@ npm run build
 ## 🎭 Current Demo Features
 
 Visit the development server to see:
-- **Live Theme Switching** - Toggle between Luxury, Dark, and Minimal themes
+- **Live Theme Switching** - Toggle between Light and Dark themes
 - **Typography Showcase** - Luxury fonts with fluid scaling
 - **Color System Demo** - Complete semantic color palette
 - **Component Integration** - shadcn/ui components with design system theming

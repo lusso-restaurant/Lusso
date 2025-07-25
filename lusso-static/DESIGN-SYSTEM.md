@@ -32,13 +32,13 @@ src/
 ## 🎨 Color System
 
 ### Theme Structure
-- **3 Built-in Themes**: Luxury (default), Dark, Minimal
+- **2 Built-in Themes**: Light (default), Dark
 - **Semantic Tokens**: Abstract color names that change per theme
 - **Brand Colors**: Consistent Lusso brand palette across themes
 
 ### Available Themes
 
-#### Luxury Theme (Default)
+#### Light Theme (Default)
 ```css
 --color-primary: #D4AF37 (Gold)
 --color-secondary: #0F1035 (Dark Blue)
@@ -52,14 +52,6 @@ src/
 --color-secondary: #0F1035 (Dark Blue)
 --color-accent: #D4AF37 (Gold)
 --color-background: #0D0D0D (Dark Grey)
-```
-
-#### Minimal Theme
-```css
---color-primary: #0F1035 (Dark Blue)
---color-secondary: #52525b (Gray)
---color-accent: #D4AF37 (Gold)
---color-background: #fafafa (Light)
 ```
 
 ### Using Colors
@@ -213,8 +205,8 @@ localStorage.setItem('lusso-theme', 'dark');
 
 ### CSS Theme Detection
 ```css
-/* Style specific to luxury theme */
-[data-theme="luxury"] .special-element {
+/* Style specific to light theme */
+[data-theme="light"] .special-element {
   background: var(--brand-glossy-gold);
 }
 
@@ -246,7 +238,7 @@ function MyComponent() {
           color: 'var(--color-primary)',
         }}
       >
-        Luxury Component
+        Light Component
       </h2>
     </div>
   );
@@ -281,11 +273,11 @@ const styles = {
 import { useEffect, useState } from 'react';
 
 function ThemeAwareComponent() {
-  const [theme, setTheme] = useState('luxury');
+  const [theme, setTheme] = useState('light');
   
   useEffect(() => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    setTheme(currentTheme || 'luxury');
+    setTheme(currentTheme || 'light');
   }, []);
   
   return (
@@ -352,7 +344,7 @@ export const BREAKPOINTS = {
 
 2. Update TypeScript types:
 ```typescript
-export type ThemeName = 'luxury' | 'dark' | 'minimal' | 'custom';
+export type ThemeName = 'light' | 'dark' | 'custom';
 ```
 
 ### Extending Color Palette
@@ -363,7 +355,7 @@ export type ThemeName = 'luxury' | 'dark' | 'minimal' | 'custom';
   --brand-custom-green: #059669;
 }
 
-[data-theme="luxury"] {
+[data-theme="light"] {
   /* Map to semantic tokens */
   --color-info: var(--brand-custom-blue);
   --color-success: var(--brand-custom-green);

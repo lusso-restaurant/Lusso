@@ -331,14 +331,14 @@ function DesignSystemDemo() {
               Aurora Background Component
             </h2>
             
-            <div style={{ 
-              height: '400px', 
-              borderRadius: 'var(--radius-lg)',
-              overflow: 'hidden',
-              position: 'relative',
-              border: '1px solid var(--color-border)'
-            }}>
-              <AuroraBackground>
+            <AuroraBackground
+              style={{ 
+                height: '400px', 
+                borderRadius: 'var(--radius-lg)',
+                position: 'relative',
+                border: '1px solid var(--color-border)'
+              }}
+            >
                 <motion.div
                   initial={{ opacity: 0.0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -387,7 +387,6 @@ function DesignSystemDemo() {
                   </Button>
                 </motion.div>
               </AuroraBackground>
-            </div>
           </section>
         </div>
       </div>

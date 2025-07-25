@@ -31,23 +31,24 @@
   --neutral-950: #09090b;
 }
 
-/* Theme: Default Luxury */
-[data-theme="luxury"], :root {
+/* Theme: Light */
+[data-theme="light"], :root {
   /* Semantic Color Tokens */
-  --color-primary: var(--brand-glossy-gold);
+  --color-primary: #D4AF37;
   --color-primary-hover: var(--brand-matte-gold);
   --color-primary-contrast: var(--neutral-50);
   
-  --color-secondary: var(--brand-dark-blue);
+  --color-secondary: #1A234A;
   --color-secondary-hover: #0d2a4a;
   --color-secondary-contrast: var(--neutral-50);
   
-  --color-accent: var(--brand-matte-gold);
-  --color-accent-hover: #9a7c4a;
+  --color-neutral: #C0B9A0;
+  --color-accent: #D4AF37;
+  --color-accent-hover: #E5C96A;
   --color-accent-contrast: var(--neutral-50);
   
   /* Surface Colors */
-  --color-background: var(--neutral-50);
+  --color-background: #0D0D0D;
   --color-surface: var(--neutral-100);
   --color-surface-elevated: var(--neutral-50);
   --color-surface-overlay: rgba(0, 0, 0, 0.8);
@@ -70,22 +71,22 @@
   --color-info: #3b82f6;
 }
 
-/* Theme: Dark Luxury */
+/* Theme: Dark */
 [data-theme="dark"] {
-  --color-primary: var(--brand-glossy-gold);
+  --color-primary: #D4AF37;
   --color-primary-hover: var(--brand-matte-gold);
   --color-primary-contrast: var(--neutral-900);
   
-  --color-secondary: var(--brand-matte-gold);
+  --color-secondary: #0F1035;
   --color-secondary-hover: var(--brand-glossy-gold);
   --color-secondary-contrast: var(--neutral-900);
   
-  --color-accent: var(--brand-glossy-gold);
+  --color-accent: #37D4AF;
   --color-accent-hover: #e6c347;
   --color-accent-contrast: var(--neutral-900);
   
-  --color-background: var(--neutral-900);
-  --color-surface: var(--neutral-800);
+  --color-background: #0D0D0D;
+  --color-surface: #1B1B1B;
   --color-surface-elevated: var(--neutral-700);
   --color-surface-overlay: rgba(0, 0, 0, 0.9);
   
@@ -99,34 +100,7 @@
   --color-outline: var(--brand-glossy-gold);
 }
 
-/* Theme: Minimal */
-[data-theme="minimal"] {
-  --color-primary: var(--neutral-900);
-  --color-primary-hover: var(--neutral-700);
-  --color-primary-contrast: var(--neutral-50);
-  
-  --color-secondary: var(--neutral-600);
-  --color-secondary-hover: var(--neutral-500);
-  --color-secondary-contrast: var(--neutral-50);
-  
-  --color-accent: var(--brand-matte-gold);
-  --color-accent-hover: var(--brand-glossy-gold);
-  --color-accent-contrast: var(--neutral-50);
-  
-  --color-background: var(--neutral-50);
-  --color-surface: var(--neutral-100);
-  --color-surface-elevated: var(--neutral-50);
-  --color-surface-overlay: rgba(0, 0, 0, 0.5);
-  
-  --color-text-primary: var(--neutral-900);
-  --color-text-secondary: var(--neutral-600);
-  --color-text-muted: var(--neutral-500);
-  --color-text-inverse: var(--neutral-50);
-  
-  --color-border: var(--neutral-200);
-  --color-border-focus: var(--neutral-400);
-  --color-outline: var(--neutral-400);
-}
+
 
 /* -------------------------------------------------------------------
    2. TYPOGRAPHY SYSTEM

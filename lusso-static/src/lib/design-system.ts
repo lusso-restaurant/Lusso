@@ -347,8 +347,8 @@ export const TRANSITIONS = {
 /**
  * Validate theme name
  */
-export function isValidTheme(theme: string): theme is 'luxury' | 'dark' | 'minimal' {
-  return ['luxury', 'dark', 'minimal'].includes(theme);
+export function isValidTheme(theme: string): theme is 'light' | 'dark' {
+  return ['light', 'dark'].includes(theme);
 }
 
 /**

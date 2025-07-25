@@ -15,13 +15,13 @@ interface ThemeSwitchProps {
 }
 
 export function ThemeSwitch({ className = '', showLabels = true }: ThemeSwitchProps) {
-  const [theme, setThemeState] = useState<ThemeName>('luxury');
+  const [theme, setThemeState] = useState<ThemeName>('light');
   const [mounted, setMounted] = useState(false);
 
   // Hydrate theme from document attribute on mount
   useEffect(() => {
     const currentTheme = document.documentElement.getAttribute('data-theme') as ThemeName;
-    if (currentTheme && ['luxury', 'dark', 'minimal'].includes(currentTheme)) {
+    if (currentTheme && ['light', 'dark'].includes(currentTheme)) {
       setThemeState(currentTheme);
     }
     setMounted(true);
@@ -58,9 +58,8 @@ export function ThemeSwitch({ className = '', showLabels = true }: ThemeSwitchPr
   }
 
   const themes: { name: ThemeName; label: string; icon: string }[] = [
-    { name: 'luxury', label: 'Luxury', icon: '✨' },
+    { name: 'light', label: 'Light', icon: '☀️' },
     { name: 'dark', label: 'Dark', icon: '🌙' },
-    { name: 'minimal', label: 'Minimal', icon: '⚪' },
   ];
 
   return (

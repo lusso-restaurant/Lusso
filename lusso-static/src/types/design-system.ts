@@ -9,7 +9,7 @@
 // THEME SYSTEM
 // ===================================================================
 
-export type ThemeName = 'luxury' | 'dark' | 'minimal';
+export type ThemeName = 'light' | 'dark';
 
 export interface ThemeContextValue {
   theme: ThemeName;
