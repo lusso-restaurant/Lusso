@@ -1,1 +1,1 @@
-// Form component exports placeholder
+export { ContactForm } from './contact-form';
