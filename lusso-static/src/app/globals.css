@@ -48,7 +48,7 @@
   --color-accent-contrast: var(--neutral-50);
   
   /* Surface Colors */
-  --color-background: #0D0D0D;
+  --color-background: #fafafa;
   --color-surface: var(--neutral-100);
   --color-surface-elevated: var(--neutral-50);
   --color-surface-overlay: rgba(0, 0, 0, 0.8);

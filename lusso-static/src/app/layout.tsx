@@ -36,7 +36,7 @@ export default function RootLayout({
       >
         <ThemeProvider defaultTheme="light" storageKey="lusso-theme">
           <Header />
-          <main style={{ paddingTop: '6rem' }}>
+          <main className="relative" style={{ paddingTop: '6rem', zIndex: 1 }}>
             {children}
           </main>
         </ThemeProvider>
