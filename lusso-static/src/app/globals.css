@@ -100,6 +100,29 @@
   --color-outline: var(--brand-glossy-gold);
 }
 
+/* Aurora Theme Integration */
+:root {
+  --aurora-primary: var(--color-primary);
+  --aurora-secondary: var(--color-accent);  
+  --aurora-tertiary: var(--color-secondary);
+}
+
+[data-theme="light"] {
+  --aurora-color-1: #D4AF37;  /* Brand gold */
+  --aurora-color-2: #FFD700;  /* Bright gold */
+  --aurora-color-3: #FFF8DC;  /* Cornsilk - pearl white */
+  --aurora-color-4: #F5F5F5;  /* Pearl white */
+  --aurora-color-5: #E6D3A3;  /* Light champagne */
+}
+
+[data-theme="dark"] {
+  --aurora-color-1: #37D4AF;  /* Brand teal */
+  --aurora-color-2: #5CE5C5;  /* Light teal */
+  --aurora-color-3: #D4AF37;  /* Brand gold */
+  --aurora-color-4: #2BB89B;  /* Deep teal */
+  --aurora-color-5: #B2935B;  /* Matte gold */
+}
+
 
 
 /* -------------------------------------------------------------------

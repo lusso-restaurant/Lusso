@@ -31,7 +31,7 @@ We've built a comprehensive ultra-modular design system that serves as the found
 - **Tailwind CSS v4** - Next-generation utility framework with CSS custom properties
 
 ### **Design System**
-- **CSS Custom Properties** - Native theme switching with zero JavaScript overhead
+- **CSS Custom Properties** - Native theme switching with minimal JavaScript overhead
 - **shadcn/ui Integration** - High-quality, accessible component foundation
 - **Design Token Architecture** - Semantic color, spacing, and typography systems
 - **Fluid Typography** - Responsive text scaling using CSS clamp functions
@@ -44,7 +44,15 @@ We've built a comprehensive ultra-modular design system that serves as the found
 
 ## 🎨 Design System Features
 
-Our ultra-modular design system provides theme-aware components that automatically adapt using CSS custom properties, enabling seamless switching between Light and Dark themes with zero JavaScript overhead. For a complete guide to design tokens and themes, see [DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md).
+Our ultra-modular design system provides theme-aware components that automatically adapt using CSS custom properties, enabling seamless switching between Light and Dark themes. Most components use pure CSS with zero JavaScript overhead, with the aurora background component using minimal JavaScript for advanced theme integration.
+
+### **Theme Switching Architecture**
+- **CSS-Based (Most Components)**: Header, buttons, text, backgrounds use pure CSS custom properties
+- **JavaScript-Enhanced (Aurora Only)**: Aurora background uses DOM-based theme detection for reliable color switching
+- **Static Export Compatible**: All functionality works on GitHub Pages and static hosting
+- **Performance Impact**: Minimal - only aurora component uses JavaScript theme detection
+
+For a complete guide to design tokens and themes, see [DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md).
 
 ## 📁 Project Structure
 
@@ -133,7 +141,7 @@ Based on comprehensive research, we have identified and documented:
 
 ### **Ultra-Modular Architecture**
 - **Theme Agnostic**: All components work seamlessly across any theme
-- **CSS Custom Properties**: Zero JavaScript required for theming
+- **CSS Custom Properties**: Minimal JavaScript required for theming (aurora component only)
 - **Component Composability**: Mix and match components easily
 - **Type Safety**: Full TypeScript coverage prevents runtime errors
 
@@ -153,7 +161,7 @@ Based on comprehensive research, we have identified and documented:
 
 ### **Technical Goals ✅**
 - [x] Ultra-modular design system architecture
-- [x] Theme switching with zero JavaScript overhead
+- [x] Theme switching with CSS custom properties (minimal JavaScript for aurora)
 - [x] Type-safe component development
 - [x] Static export compatibility
 

@@ -61,3 +61,117 @@ style={{
 - **Revert if Needed:** Use version control to rollback.
 
 If issues arise, check console for errors and ensure CSS variables are correctly referenced.
+
+## Under Testing
+
+### Proposed Theme-Aware Aurora System
+**Status:** Testing Phase - Adding CSS variables to integrate aurora with design system
+
+**CSS Variables to Add to `globals.css`:**
+```css
+/* Aurora Theme Integration - Add to existing :root */
+:root {
+  --aurora-primary: var(--color-primary);
+  --aurora-secondary: var(--color-accent);  
+  --aurora-tertiary: var(--color-secondary);
+}
+
+/* Light theme - subtle luxury aurora */
+[data-theme="light"] {
+  --aurora-color-1: #D4AF37;  /* Brand gold */
+  --aurora-color-2: #E5C96A;  /* Light gold */
+  --aurora-color-3: #B2935B;  /* Matte gold */
+  --aurora-color-4: #F4F4F4;  /* Matte white */
+  --aurora-color-5: #C0B9A0;  /* Neutral */
+}
+
+/* Dark theme - dramatic teal/gold aurora */
+[data-theme="dark"] {
+  --aurora-color-1: #37D4AF;  /* Brand teal */
+  --aurora-color-2: #5CE5C5;  /* Light teal */
+  --aurora-color-3: #D4AF37;  /* Brand gold */
+  --aurora-color-4: #2BB89B;  /* Deep teal */
+  --aurora-color-5: #B2935b;  /* Matte gold */
+}
+```
+
+**Component Updates to Test:**
+```tsx
+// Phase 2: Replace in aurora-background.tsx (line 31)
+"--aurora": "repeating-linear-gradient(100deg,var(--aurora-color-1)_10%,var(--aurora-color-2)_15%,var(--aurora-color-3)_20%,var(--aurora-color-4)_25%,var(--aurora-color-5)_30%)"
+
+// Phase 3: Replace background (line 20)  
+style={{ backgroundColor: 'var(--color-background)' }}
+```
+
+**Testing Goals:**
+- ✅ Instant theme switching for aurora colors
+- ✅ Brand-aligned aurora colors (gold/teal vs generic blue/purple)
+- ✅ Maintain existing animation and blur effects
+- ✅ Preserve accessibility and reduced motion support
+
+**Testing Notes:**
+- Start with CSS variables only
+- Test theme switching behavior
+- Verify aurora visibility in both themes
+- Check for any console errors
+
+## ✅ WORKING SOLUTION (Updated July 26, 2025)
+
+**Status:** Theme switching now works perfectly using JavaScript approach
+
+### **What Actually Works**
+The component now uses **direct DOM theme detection** instead of CSS variables:
+
+```tsx
+// In aurora-background.tsx - Working approach:
+useEffect(() => {
+  // Read theme directly from data-theme attribute
+  const currentTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' || 'light';
+  setTheme(currentTheme);
+  
+  // Listen for theme changes in real-time
+  const observer = new MutationObserver(() => {
+    const newTheme = document.documentElement.getAttribute('data-theme') as 'light' | 'dark' || 'light';
+    setTheme(newTheme);
+  });
+  
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
+}, []);
+```
+
+### **Key Changes Made**
+1. **Removed CSS variable approach** - Proved unreliable due to scope issues
+2. **Added `key` prop for forced re-rendering**: `key={aurora-${theme}}`
+3. **Theme-reactive background colors**: `backgroundColor: theme === 'light' ? '#f8f8f8' : '#1a1a1a'`
+4. **Component-level color definitions** instead of CSS variables
+
+### **How to Modify Colors Now**
+**Easy Method - Update the component directly:**
+
+```tsx
+// In aurora-background.tsx, modify this object:
+const auroraColors = {
+  light: {
+    color1: "#D4AF37", // Change this for light theme color 1
+    color2: "#FFD700", // Change this for light theme color 2
+    // ... etc
+  },
+  dark: {
+    color1: "#37D4AF", // Change this for dark theme color 1
+    color2: "#5CE5C5", // Change this for dark theme color 2
+    // ... etc
+  }
+};
+```
+
+### **Testing Method**
+1. **Test background changes first**: Modify `backgroundColor` logic to use dramatic colors (white vs black)
+2. **Verify theme switching**: Click theme button and see instant background change
+3. **Then adjust aurora colors**: Modify `auroraColors` object
+4. **Console logging available**: Check browser console for theme change confirmations
+
+For detailed technical implementation, see `/archive/AURORA-THEME-SWITCHING-FIX.md`
