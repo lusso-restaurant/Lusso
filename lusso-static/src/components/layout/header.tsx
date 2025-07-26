@@ -7,9 +7,9 @@ import {
   getBorderRadius, 
   createTransition,
   getFontFamily,
-  getFontSize,
   getFontWeight 
 } from '@/lib/design-system';
+import { ThemeSwitch } from '@/components/ui/theme-switch';
 
 interface LussoHeaderProps {
   title?: string;
@@ -186,6 +186,11 @@ export const Header: React.FC<LussoHeaderProps> = ({
               {children}
             </nav>
           )}
+          
+          {/* Theme Switch - Positioned on the right */}
+          <div style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+            <ThemeSwitch iconOnly />
+          </div>
         </div>
       </header>
 
@@ -290,7 +295,7 @@ export const Header: React.FC<LussoHeaderProps> = ({
 
             /* Navigation styling */
             .lusso-navigation {
-              font-family: ${getFontFamily('body')};
+              font-family: ${getFontFamily('sans')};
               font-size: clamp(0.9rem, 1vw, 1.1rem);
               font-weight: ${getFontWeight('medium')};
               letter-spacing: 0.025em;

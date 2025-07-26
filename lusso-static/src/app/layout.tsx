@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Lato } from "next/font/google";
+import { DM_Serif_Display, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Header } from "@/components/layout/header";
 import "./globals.css";
@@ -12,11 +12,11 @@ const dmSerifDisplay = DM_Serif_Display({
   weight: ["400"],
 });
 
-const lato = Lato({
-  variable: "--font-lato",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSerifDisplay.variable} ${lato.variable} antialiased`}
+        className={`${dmSerifDisplay.variable} ${inter.variable} antialiased`}
       >
         <ThemeProvider defaultTheme="light" storageKey="lusso-theme">
           <Header />

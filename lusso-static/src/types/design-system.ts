@@ -51,7 +51,7 @@ export type SemanticColor =
 // TYPOGRAPHY SYSTEM
 // ===================================================================
 
-export type FontFamily = 'display' | 'body' | 'mono' | 'system';
+export type FontFamily = 'display' | 'sans' | 'mono' | 'system';
 
 export type FontSize = 
   | 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' 

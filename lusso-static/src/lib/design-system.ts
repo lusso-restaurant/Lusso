@@ -87,9 +87,17 @@ export function createColorPalette(variant: ColorVariant) {
 
 /**
  * Get font family CSS variable
+ * Maps design tokens directly to Next.js font variables for reliable resolution
  */
 export function getFontFamily(family: FontFamily): string {
-  return cssVar(`font-${family}`);
+  const fontMap = {
+    'display': 'var(--font-dm-serif-display), "DM Serif Display", serif',
+    'sans': 'var(--font-inter), "Inter", system-ui, sans-serif', 
+    'mono': '"JetBrains Mono", monospace',
+    'system': 'system-ui, sans-serif'
+  } as const;
+  
+  return fontMap[family] || fontMap.system;
 }
 
 /**

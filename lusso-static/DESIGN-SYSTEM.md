@@ -78,10 +78,10 @@ const styles = {
 ## 📝 Typography System
 
 ### Font Families
-- **Display**: DM Serif Display (luxury serif for headings)
-- **Body**: TBD (secondary font not yet determined)
-- **Mono**: Geist Mono (monospace for code)
-- **System**: Geist Sans (fallback system font)
+- **Display**: DM Serif Display (luxury serif for H1/logo elements)
+- **Sans**: Inter (modern sans-serif for H2-H6, body text, UI components)
+- **Mono**: JetBrains Mono (monospace for code)
+- **System**: System fallback fonts
 
 ### Font Sizes (Fluid Typography)
 ```css
@@ -108,7 +108,7 @@ const styles = {
 }
 
 .body-text {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
 }
@@ -122,6 +122,12 @@ const headingStyle = createTypographyStyle({
   family: 'display',
   size: '3xl',
   weight: 'bold',
+});
+
+const bodyStyle = createTypographyStyle({
+  family: 'sans',
+  size: 'base',
+  weight: 'regular',
 });
 ```
 

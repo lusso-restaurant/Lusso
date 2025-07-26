@@ -17,7 +17,7 @@ The Lusso restaurant website is a luxury dining web experience built with an **u
 We've built a comprehensive ultra-modular design system that serves as the foundation for the luxury restaurant website:
 
 - **🎨 Theme System**: 2 complete themes (Light, Dark) with seamless switching
-- **📝 Typography**: Luxury fonts (DM Serif Display) with fluid responsive scaling
+- **📝 Typography**: Complete font system (DM Serif Display + Inter) with optimized design tokens
 - **🎡 Color Tokens**: Semantic color system supporting unlimited theme variations
 - **📏 Design Tokens**: Complete spacing, animation, and layout system
 - **🔧 Component Architecture**: Type-safe, accessible component system ready for restaurant features
