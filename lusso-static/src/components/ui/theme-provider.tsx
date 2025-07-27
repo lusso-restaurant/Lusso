@@ -21,7 +21,7 @@ import type { ThemeName, ThemeContextValue } from '@/types/design-system';
  * ```
  */
 
-const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 interface ThemeProviderProps {
   children: React.ReactNode;
