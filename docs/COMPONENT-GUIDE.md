@@ -1,5 +1,11 @@
 # Lusso Restaurant - Ultra-Modular Component Guide
 
+## 📖 Documentation Navigation
+- **[← Back to Documentation Index](./README.md)**
+- **[Design System Reference](./DESIGN-SYSTEM.md)**
+- **[Project Overview](../README.md)**
+- **[Product Requirements](../PRD.md)**
+
 ## 🎯 Component Architecture Philosophy
 
 Our restaurant website uses an **ultra-modular design system** with **optimized hybrid Server/Client Components** where every component is theme-aware, type-safe, and optimized for luxury dining experiences. We follow Next.js App Router best practices with static export compatibility for GitHub Pages hosting.
@@ -542,7 +548,16 @@ export function ComponentPlayground() {
 
 ---
 
-**Note**: For a list of potential components and third-party library research, see the archived file `COMPONENT-RESEARCH.md`.
+## 📚 Related Documentation
+
+- **[Design System](./DESIGN-SYSTEM.md)** - Complete theming, colors, typography, and design tokens
+- **[Documentation Index](./README.md)** - Navigation to all project documentation
+- **[Project README](../README.md)** - Quick start and project overview
+- **[Component Research](../archive/COMPONENT-RESEARCH.md)** - Historical component research and library analysis
+- **[Refactoring Sessions](./refactoring-sessions/)** - Recent development session records
+- **[Project Archive](../archive/)** - Historical development documents
+
+---
 
 **Component Architecture**: Ultra-modular with seamless theme integration  
 **Developer Experience**: Single imports, type safety, comprehensive documentation  

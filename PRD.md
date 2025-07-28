@@ -18,7 +18,7 @@ Transform Lusso luxury restaurant website from a dynamic Three.js-powered applic
 
 ## 2. Technical Stack
 
-The definitive technology stack is maintained in the project [README.md](README.md).
+The definitive technology stack is maintained in the project [README.md](../README.md).
 
 ## 3. Architecture & Component System
 
@@ -52,7 +52,7 @@ The definitive technology stack is maintained in the project [README.md](README.
 
 ## 4. Design System Implementation
 
-All design system specifications, including colors, typography, and spacing, are maintained in [DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md).
+All design system specifications, including colors, typography, and spacing, are maintained in [DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md).
 
 ## 5. Feature Requirements
 

@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import type { ThemeName } from '@/types/design-system';
+import { DEFAULT_THEME, THEME_NAMES, getOppositeTheme } from '@/lib/theme-constants';
+import { ThemeContext } from '@/components/ui/theme-provider';
 
 /**
- * Standalone Theme Switch Component
+ * Theme Switch Component
  * 
- * SSR-safe theme switcher that works without context provider
+ * SSR-safe theme switcher with context integration when available
  */
 
 interface ThemeSwitchProps {
@@ -16,29 +18,40 @@ interface ThemeSwitchProps {
 }
 
 export function ThemeSwitch({ className = '', showLabels = true, iconOnly = false }: ThemeSwitchProps) {
-  const [theme, setThemeState] = useState<ThemeName>('light');
+  // SSR-safe context access - doesn't throw if context unavailable
+  const themeContext = useContext(ThemeContext);
+  const [localTheme, setLocalTheme] = useState<ThemeName>(DEFAULT_THEME);
   const [mounted, setMounted] = useState(false);
 
-  // Hydrate theme from document attribute on mount
+  // Use context theme when available, fallback to local state during SSR
+  const theme = themeContext?.theme ?? localTheme;
+
   useEffect(() => {
+    // Hydrate theme from DOM on mount (handles SSR → client transition)
     const currentTheme = document.documentElement.getAttribute('data-theme') as ThemeName;
-    if (currentTheme && ['light', 'dark'].includes(currentTheme)) {
-      setThemeState(currentTheme);
+    if (currentTheme && THEME_NAMES.includes(currentTheme)) {
+      setLocalTheme(currentTheme);
     }
     setMounted(true);
   }, []);
 
+  // Smart theme switching: use context when available, DOM fallback when not
   const setTheme = (newTheme: ThemeName) => {
-    setThemeState(newTheme);
-    
-    // Apply theme to document
-    const root = document.documentElement;
-    root.setAttribute('data-theme', newTheme);
-    root.className = root.className.replace(/theme-\w+/, '');
-    root.classList.add(`theme-${newTheme}`);
-    
-    // Store in localStorage
-    localStorage.setItem('lusso-theme', newTheme);
+    if (themeContext?.setTheme) {
+      // Context available: let ThemeProvider handle DOM updates
+      themeContext.setTheme(newTheme);
+    } else {
+      // Context unavailable (SSR/fallback): update DOM directly
+      setLocalTheme(newTheme);
+      
+      const root = document.documentElement;
+      root.setAttribute('data-theme', newTheme);
+      root.className = root.className.replace(/theme-\w+/, '');
+      root.classList.add(`theme-${newTheme}`);
+      
+      // Store in localStorage
+      localStorage.setItem('lusso-theme', newTheme);
+    }
   };
 
   // Don't render during SSR
@@ -82,7 +95,7 @@ export function ThemeSwitch({ className = '', showLabels = true, iconOnly = fals
 
   if (iconOnly) {
     const currentThemeData = themes.find(t => t.name === theme);
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    const nextTheme = getOppositeTheme(theme);
     
     return (
       <button

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Header } from "@/components/layout/header";
+import { DEFAULT_THEME } from "@/lib/theme-constants";
 import "./globals.css";
 
 // Luxury fonts for Lusso - optimized selection
@@ -34,7 +35,7 @@ export default function RootLayout({
       <body
         className={`${dmSerifDisplay.variable} ${inter.variable} antialiased`}
       >
-        <ThemeProvider defaultTheme="light" storageKey="lusso-theme">
+        <ThemeProvider defaultTheme={DEFAULT_THEME} storageKey="lusso-theme">
           <Header />
           <main className="relative" style={{ paddingTop: '6rem', zIndex: 1 }}>
             {children}

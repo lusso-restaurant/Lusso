@@ -20,7 +20,7 @@ import * as path from 'path';
 
 describe('Phase 1 - Success Metric 1: Baseline for Theme Constants Reduction', () => {
   
-  test('should have baseline count of duplicate theme arrays for later phases to improve', () => {
+  test('should have eliminated duplicate theme arrays (success metric)', () => {
     const srcPath = path.join(__dirname, '../src');
     const files = getAllTsxTsFiles(srcPath);
     
@@ -46,12 +46,12 @@ describe('Phase 1 - Success Metric 1: Baseline for Theme Constants Reduction', (
       });
     });
     
-    // Phase 1: Document current state (to be improved in later phases)
-    expect(duplicateCount).toBeGreaterThan(0);
-    console.log(`📊 Baseline: ${duplicateCount} duplicate theme arrays found (to be eliminated in later phases)`);
+    // Success: All duplicate theme arrays have been eliminated
+    expect(duplicateCount).toBe(0);
+    console.log(`✅ Success: ${duplicateCount} duplicate theme arrays found (target: 0)`);
   });
 
-  test('should document baseline hardcoded theme definitions for later improvement', () => {
+  test('should have minimized hardcoded theme definitions (success metric)', () => {
     const srcPath = path.join(__dirname, '../src');
     const files = getAllTsxTsFiles(srcPath);
     
@@ -70,9 +70,9 @@ describe('Phase 1 - Success Metric 1: Baseline for Theme Constants Reduction', (
       }
     });
     
-    // Phase 1: Document current state (to be improved in later phases)
-    expect(hardcodedThemes).toBeGreaterThan(0);
-    console.log(`📊 Baseline: ${hardcodedThemes} hardcoded theme definitions found (to be eliminated in later phases)`);
+    // Success: Significant reduction in hardcoded theme definitions
+    expect(hardcodedThemes).toBeLessThanOrEqual(2);
+    console.log(`✅ Progress: ${hardcodedThemes} hardcoded theme definitions remaining (down from original baseline)`);
   });
 });
 

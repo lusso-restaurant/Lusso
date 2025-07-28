@@ -1,5 +1,11 @@
 # Lusso Design System Documentation
 
+## 📖 Documentation Navigation
+- **[← Back to Documentation Index](./README.md)**
+- **[Component Development Guide](./COMPONENT-GUIDE.md)**
+- **[Project Overview](../README.md)**
+- **[Product Requirements](../PRD.md)**
+
 ## 🎨 Ultra-Modular Design System
 
 A comprehensive, theme-switchable design system built for the Lusso restaurant website. Designed for maximum modularity, easy theme swapping, and consistent styling across all components.
@@ -376,6 +382,15 @@ export type ThemeName = 'light' | 'dark' | 'custom';
 - **Static Export Compatible**: Works perfectly with GitHub Pages
 - **Font Display Swap**: Optimized font loading for performance
 - **Minimal Bundle**: Types don't add to bundle size
+
+## 📚 Related Documentation
+
+- **[Component Guide](./COMPONENT-GUIDE.md)** - Complete guide to building components with this design system
+- **[Documentation Index](./README.md)** - Navigation to all project documentation
+- **[Project README](../README.md)** - Quick start and technology overview
+- **[Component Research](../archive/COMPONENT-RESEARCH.md)** - Historical component research and third-party library analysis
+- **[Refactoring Sessions](./refactoring-sessions/)** - Recent improvements and optimizations
+- **[Project Archive](../archive/)** - Historical development documents
 
 ---
 

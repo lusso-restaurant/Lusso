@@ -16,7 +16,9 @@ import type {
   ShadowScale,
   ComponentSize,
   ComponentVariant,
+  ThemeName,
 } from '@/types/design-system';
+import { THEME_NAMES } from '@/lib/theme-constants';
 
 // ===================================================================
 // CSS CUSTOM PROPERTY UTILITIES
@@ -355,8 +357,8 @@ export const TRANSITIONS = {
 /**
  * Validate theme name
  */
-export function isValidTheme(theme: string): theme is 'light' | 'dark' {
-  return ['light', 'dark'].includes(theme);
+export function isValidTheme(theme: string): theme is ThemeName {
+  return THEME_NAMES.includes(theme as ThemeName);
 }
 
 /**

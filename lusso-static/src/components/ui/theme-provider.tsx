@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { ThemeName, ThemeContextValue } from '@/types/design-system';
+import { DEFAULT_THEME, THEME_NAMES, isValidTheme } from '@/lib/theme-constants';
 
 /**
  * LUSSO THEME PROVIDER
@@ -31,7 +32,7 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({
   children,
-  defaultTheme = 'light',
+  defaultTheme = DEFAULT_THEME,
   storageKey = 'lusso-theme',
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<ThemeName>(defaultTheme);
@@ -40,7 +41,7 @@ export function ThemeProvider({
   // Hydrate theme from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem(storageKey) as ThemeName;
-    if (stored && ['light', 'dark'].includes(stored)) {
+    if (stored && isValidTheme(stored)) {
       setThemeState(stored);
     }
     setMounted(true);
@@ -65,7 +66,7 @@ export function ThemeProvider({
   };
 
   const toggleTheme = () => {
-    const themes: ThemeName[] = ['light', 'dark'];
+    const themes: ThemeName[] = [...THEME_NAMES];
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
     setTheme(themes[nextIndex]);

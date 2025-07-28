@@ -52,7 +52,7 @@ Our ultra-modular design system provides theme-aware components that automatical
 - **Static Export Compatible**: All functionality works on GitHub Pages and static hosting
 - **Performance Impact**: Minimal - only aurora component uses JavaScript theme detection
 
-For a complete guide to design tokens and themes, see [DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md).
+For a complete guide to design tokens and themes, see [DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md).
 
 ## 📁 Project Structure
 
@@ -154,8 +154,9 @@ Based on comprehensive research, we have identified and documented:
 ## 📚 Documentation
 
 - **[PRD.md](PRD.md)** - Complete product requirements and technical specifications
-- **[DESIGN-SYSTEM.md](lusso-static/DESIGN-SYSTEM.md)** - Comprehensive design system documentation
-- **[COMPONENT-GUIDE.md](lusso-static/COMPONENT-GUIDE.md)** - Developer guide for component usage
+- **[Documentation Index](docs/README.md)** - Complete documentation navigation
+- **[DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md)** - Comprehensive design system documentation
+- **[COMPONENT-GUIDE.md](docs/COMPONENT-GUIDE.md)** - Developer guide for component usage
 
 ## 🎯 Success Metrics
 
