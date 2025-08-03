@@ -13,14 +13,25 @@ export function HeroSection() {
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Main Title */}
         <h1 
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tight"
+          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-6 lusso-brand-title"
           style={{
             fontFamily: getFontFamily('display'),
-            background: 'linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B2935B 100%)',
+            fontWeight: 'regular',
+            background: `linear-gradient(135deg, 
+              var(--color-text-primary) 0%, 
+              var(--brand-glossy-gold) 50%, 
+              var(--color-text-primary) 100%
+            )`,
+            backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 0 30px rgba(212, 175, 55, 0.3)'
+            backgroundSize: '200% 100%',
+            backgroundPosition: '0% 50%',
+            letterSpacing: '0.15em',
+            lineHeight: 1.2,
+            textShadow: 'none',
+            transition: 'background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+            cursor: 'default'
           }}
         >
           LUSSO
