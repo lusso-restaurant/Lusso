@@ -2,7 +2,7 @@ name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [ feature/complete-landing-page ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -24,11 +24,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm ci
+        run: |
+          cd lusso-static
+          npm ci
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -36,12 +38,14 @@ jobs:
           static_site_generator: next
           
       - name: Build with Next.js
-        run: npm run build
+        run: |
+          cd lusso-static
+          npm run build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./lusso-static/out
 
   deploy:
     environment:
