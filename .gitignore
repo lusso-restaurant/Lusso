@@ -89,6 +89,7 @@ temp/
 
 # Claude
 .claude/
+.trae/
 
 # Prevent accidental documentation commits
 *-mcp.md

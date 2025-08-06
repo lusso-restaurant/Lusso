@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import { Header } from "@/components/layout/header";
+import { DynamicHeader } from "@/components/layout/dynamic-header";
 import { DEFAULT_THEME } from "@/lib/theme-constants";
 import "./globals.css";
 
@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${dmSerifDisplay.variable} ${inter.variable} antialiased`}
       >
         <ThemeProvider defaultTheme={DEFAULT_THEME} storageKey="lusso-theme">
-          <Header />
+          <DynamicHeader />
           <main className="relative" style={{ paddingTop: '6rem', zIndex: 1 }}>
             {children}
           </main>

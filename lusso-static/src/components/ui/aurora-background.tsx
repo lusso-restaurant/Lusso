@@ -4,7 +4,7 @@ import React, { ReactNode, useState, useEffect, useContext } from "react";
 import { ThemeContext } from "@/components/ui/theme-provider";
 import { generateAuroraGradient, getAuroraBackgroundColor } from "@/lib/theme-utils";
 import { DEFAULT_THEME } from "@/lib/theme-constants";
-import type { ThemeName } from "@/types/design-system";
+
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   children?: ReactNode;

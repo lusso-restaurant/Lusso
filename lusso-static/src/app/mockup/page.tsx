@@ -36,11 +36,25 @@ function DesignSystemDemo() {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'var(--font-size-6xl)',
-              fontWeight: 'var(--font-weight-bold)',
-              color: 'var(--color-primary)',
+              fontWeight: 'var(--font-weight-regular)',
+              background: `linear-gradient(135deg, 
+                var(--color-text-primary) 0%, 
+                var(--brand-glossy-gold) 50%, 
+                var(--color-text-primary) 100%
+              )`,
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundSize: '200% 100%',
+              backgroundPosition: '0% 50%',
+              letterSpacing: '0.15em',
+              lineHeight: 1.2,
+              textShadow: 'none',
+              transition: 'background-position 0.6s ease-out',
+              cursor: 'default',
               marginBottom: 'var(--space-4)',
-              letterSpacing: 'var(--letter-spacing-tight)',
             }}
+            className="lusso-brand-title"
           >
             Lusso
           </h1>
