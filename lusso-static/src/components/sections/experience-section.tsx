@@ -1,7 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { getFontFamily } from '@/lib/design-system';
 
-export function ExperienceSection() {
+interface ExperienceSectionProps {
+  id?: string;
+}
+
+export function ExperienceSection({ id }: ExperienceSectionProps) {
   const experiences = [
     {
       title: "Micul Dejun",
@@ -24,7 +28,7 @@ export function ExperienceSection() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section id={id} className="py-20 px-4 sm:px-6 lg:px-8 relative">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#D4AF37]/5 to-transparent" />
       

@@ -21,17 +21,22 @@ const navigationItems: NavigationItem[] = [
   {
     href: "/meniu",
     label: "Meniu",
-    description: "Descoperă preparatele noastre"
+    description: "Meniul nostru"
   },
   {
     href: "/#story",
     label: "Povestea",
-    description: "Despre noi"
+    description: "Povestea noastră"
+  },
+  {
+    href: "/#order",
+    label: "Comandă",
+    description: "Comandă acum"
   },
   {
     href: "/#contact",
     label: "Contact",
-    description: "Rezervări și informații"
+    description: "Contactează-ne"
   }
 ];
 

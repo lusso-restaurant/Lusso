@@ -1,9 +1,13 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { getFontFamily } from '@/lib/design-system';
 
-export function StorySection() {
+interface StorySectionProps {
+  id?: string;
+}
+
+export function StorySection({ id }: StorySectionProps) {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section id={id} className="py-20 px-4 sm:px-6 lg:px-8 relative">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-transparent" />
       

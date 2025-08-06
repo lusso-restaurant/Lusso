@@ -1,7 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getFontFamily } from '@/lib/design-system';
 
-export function CulinarySection() {
+interface CulinarySectionProps {
+  id?: string;
+}
+
+export function CulinarySection({ id }: CulinarySectionProps) {
   const features = [
     {
       title: "Cuptorul Josper",
@@ -26,7 +30,7 @@ export function CulinarySection() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section id={id} className="py-20 px-4 sm:px-6 lg:px-8 relative">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background/50" />
       

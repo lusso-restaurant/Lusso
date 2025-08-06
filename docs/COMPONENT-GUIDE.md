@@ -41,9 +41,12 @@ src/components/
 │   ├── menu-page.tsx        # Complete menu page
 │   └── menu-search.tsx      # Menu search functionality
 ├── sections/         # Page sections
-│   ├── hero-section.tsx     # Landing experience
-│   ├── story-section.tsx    # About section
-│   ├── contact-section.tsx  # Contact & reservations
+│   ├── hero-section.tsx     # Landing experience with "Comandă" CTA
+│   ├── story-section.tsx    # About section (id="story")
+│   ├── culinary-section.tsx # Culinary approach (id="culinary")
+│   ├── experience-section.tsx # Restaurant experience (id="experience")
+│   ├── order-section.tsx    # Order functionality (id="order")
+│   ├── contact-section.tsx  # Contact & reservations (id="contact")
 │   └── footer-section.tsx   # Footer content
 ├── data-display/     # Content presentation
 │   ├── product-card.tsx     # Product display cards
@@ -65,7 +68,7 @@ import { ThemeSwitch } from './components/ui/theme-switch';
 import { MenuCard } from './components/restaurant/menu-card';
 
 // ✅ DO this - single import source
-import { Button, ThemeSwitch, MenuCard, PhoneContact } from '@/components';
+import { Button, ThemeSwitch, MenuCard, PhoneContact, OrderSection } from '@/components';
 ```
 
 ### **Theme-Aware Components**
@@ -73,7 +76,7 @@ import { Button, ThemeSwitch, MenuCard, PhoneContact } from '@/components';
 Every component automatically adapts to the current theme:
 
 ```tsx
-import { MenuCard, PhoneContact } from '@/components';
+import { MenuCard, PhoneContact, OrderSection } from '@/components';
 
 export default function RestaurantPage() {
   return (
@@ -85,9 +88,88 @@ export default function RestaurantPage() {
         description="With cherry gastrique and seasonal vegetables"
       />
       <PhoneContact />
+      <OrderSection />  {/* New order functionality with phone redirect */}
     </div>
   );
 }
+```
+
+## 📞 Order & Contact Components
+
+### **OrderSection Component**
+
+Dedicated ordering functionality with phone redirect:
+
+```tsx
+// src/components/sections/order-section.tsx
+export const OrderSection: React.FC = () => {
+  const handleOrderCall = () => {
+    window.open('tel:+40741234567', '_self');
+  };
+
+  return (
+    <section id="order" className="py-20 bg-surface">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-4xl font-display text-primary mb-6">
+          Comandă Acum
+        </h2>
+        <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+          Contactează-ne pentru a plasa o comandă și bucură-te de preparatele noastre delicioase.
+        </p>
+        <Button 
+          onClick={handleOrderCall}
+          size="lg"
+          className="bg-primary hover:bg-primary/90 text-white px-8 py-4"
+        >
+          <Phone className="mr-2 h-5 w-5" />
+          Sună pentru Comandă
+        </Button>
+        <p className="text-sm text-text-secondary mt-4">
+          +40 741 234 567
+        </p>
+      </div>
+    </section>
+  );
+};
+```
+
+### **Navigation with Section Anchors**
+
+Updated navigation structure with smooth scrolling:
+
+```tsx
+// Navigation items with section anchors
+const navigationItems = [
+  { href: "/", label: "Acasă", description: "Pagina principală" },
+  { href: "/menu", label: "Meniu", description: "Preparatele noastre" },
+  { href: "/#story", label: "Povestea", description: "Despre noi" },
+  { href: "/#order", label: "Comandă", description: "Comandă mâncare" },
+  { href: "/#contact", label: "Contact", description: "Rezervări și contact" }
+];
+```
+
+### **Smooth Scrolling Implementation**
+
+```tsx
+// Automatic smooth scrolling for section anchors
+useEffect(() => {
+  const handleSmoothScroll = (e: Event) => {
+    const target = e.target as HTMLAnchorElement;
+    if (target.hash) {
+      e.preventDefault();
+      const element = document.querySelector(target.hash);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
+  document.addEventListener('click', handleSmoothScroll);
+  return () => document.removeEventListener('click', handleSmoothScroll);
+}, []);
 ```
 
 ## 🍽️ Menu Navigation Integration

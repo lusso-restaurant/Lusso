@@ -71,9 +71,11 @@ All design system specifications, including colors, typography, and spacing, are
 
 #### Desktop Navigation (lg+)
 - **MainNavigation**: Desktop navigation with dynamic styling based on active route
+- **Navigation Items**: "Acasă", "Meniu", "Povestea" (#story), "Comandă" (#order), "Contact" (#contact)
 - **MenuNavigation**: Category navigation with smooth scrolling and active state management
 - **Header Integration**: Menu categories seamlessly integrated into header layout
 - **Accessibility**: High contrast support and reduced motion preferences
+- **Smooth Scrolling**: Automatic smooth scrolling to section anchors with proper offset
 
 #### Mobile Navigation (sm-md) ✅ **COMPLETE**
 - **MobileNavigation Component**: Shadcn Sheet-based mobile menu with proper TypeScript interfaces
@@ -81,6 +83,7 @@ All design system specifications, including colors, typography, and spacing, are
 - **Touch Optimization**: 44px+ touch targets with proper spacing
 - **Theme Integration**: Seamless theme switching within mobile menu
 - **State Management**: Proper open/close state with accessibility support
+- **Section Navigation**: Same smooth scrolling functionality as desktop
 
 ### 5.2 Modal System
 
@@ -101,13 +104,34 @@ All design system specifications, including colors, typography, and spacing, are
 #### Hero Section
 - **Background**: Static images (no 3D rendering)
 - **Content**: Restaurant name, tagline, primary CTAs
+- **CTA Button**: "Comandă" button with phone redirect functionality
 - **Animation**: Parallax effects using CSS transforms
 - **Mobile**: Optimized image sizing and touch targets
+- **Section ID**: Root page (no anchor needed)
 
 #### Story Section
 - **Content**: Restaurant narrative, chef information
 - **Images**: Optimized gallery with lazy loading
 - **Layout**: Text/image alternating layout
+- **Section ID**: `#story` for navigation anchor
+
+#### Culinary Section
+- **Content**: Restaurant's culinary approach and features
+- **Details**: Josper oven, premium ingredients
+- **Section ID**: `#culinary` for navigation anchor
+
+#### Experience Section
+- **Content**: Lusso experience across different meal times
+- **Details**: Breakfast, lunch, dinner ambiance
+- **Section ID**: `#experience` for navigation anchor
+
+#### Order Section ✅ **NEW**
+- **Purpose**: Dedicated ordering functionality
+- **Content**: Order call-to-action with phone redirect
+- **Phone Number**: +40 741 234 567 (standardized format)
+- **Functionality**: Direct phone call initiation via `tel:` links
+- **Section ID**: `#order` for navigation anchor
+- **Integration**: Accessible via "Comandă" navigation item
 
 #### Menu Section
 - **Content**: Static menu data (embedded in build)
@@ -117,16 +141,27 @@ All design system specifications, including colors, typography, and spacing, are
 
 #### Contact Section
 - **Information**: Phone number prominently displayed
-- **Language**: Romanian content ("Curand! Inca lucram la website")
-- **Details**: Essential business information only
+- **Language**: Romanian content
+- **Details**: Essential business information, reservations
+- **Phone Number**: +40 741 234 567 (standardized format)
+- **Section ID**: `#contact` for navigation anchor
 
 ### 5.4 Communication Strategy
 
 #### Phone-Based Contact
-- **Primary**: Phone calls for in-location communication
+- **Primary**: Phone calls for both reservations and orders
+- **Phone Number**: +40 741 234 567 (standardized across all components)
+- **Reservations**: "Rezervă Acum" buttons in contact section
+- **Orders**: "Comandă" buttons in hero and order sections
 - **Secondary**: WhatsApp messages on same number
-- **Implementation**: Phone icon/SVG redirects to phone app with number
+- **Implementation**: Phone icon/SVG redirects to phone app with `tel:` links
 - **No Forms**: Static website with no form handling required
+
+#### Dual Functionality
+- **Reservations**: Traditional table booking via contact section
+- **Orders**: Food ordering via dedicated order section and hero CTA
+- **Unified Experience**: Same phone number for both services
+- **Clear Distinction**: Separate sections and CTAs for different purposes
 
 ## 6. Performance Requirements
 

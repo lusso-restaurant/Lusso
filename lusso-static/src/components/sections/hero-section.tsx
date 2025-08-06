@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { getFontFamily } from '@/lib/design-system';
+import { getFontFamily, getSemanticColor } from '@/lib/design-system';
 
 export function HeroSection() {
   return (
@@ -18,9 +18,9 @@ export function HeroSection() {
             fontFamily: getFontFamily('display'),
             fontWeight: 'regular',
             background: `linear-gradient(135deg, 
-              var(--color-text-primary) 0%, 
+              ${getSemanticColor('text-primary')} 0%, 
               var(--brand-glossy-gold) 50%, 
-              var(--color-text-primary) 100%
+              ${getSemanticColor('text-secondary')} 100%
             )`,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
@@ -78,8 +78,9 @@ export function HeroSection() {
           style={{
             fontFamily: getFontFamily('sans')
           }}
+          onClick={() => window.open('tel:+40741234567', '_self')}
         >
-          <span className="relative z-10">Rezervă o masă</span>
+          <span className="relative z-10">Comandă</span>
           <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700]/20 to-[#D4AF37]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Button>
         

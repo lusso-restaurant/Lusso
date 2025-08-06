@@ -50,6 +50,15 @@ import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeSwitch } from '@/components/ui/theme-switch';
 
+// Updated navigation items with Comandă functionality
+const navigationItems = [
+  { href: "/", label: "Acasă", description: "Pagina principală" },
+  { href: "/menu", label: "Meniu", description: "Preparatele noastre" },
+  { href: "/#story", label: "Povestea", description: "Despre noi" },
+  { href: "/#order", label: "Comandă", description: "Comandă mâncare" },
+  { href: "/#contact", label: "Contact", description: "Rezervări și contact" }
+];
+
 interface MobileNavigationProps {
   className?: string;
   forceVisible?: boolean;
@@ -64,7 +73,21 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
+    if (href.startsWith("/#")) return pathname === "/"; // Section anchors on homepage
     return pathname.startsWith(href);
+  };
+
+  const handleLinkClick = (href: string) => {
+    setIsOpen(false);
+    
+    // Handle section anchors with smooth scrolling
+    if (href.startsWith("/#")) {
+      const sectionId = href.substring(2);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
   };
 
   return (
@@ -92,7 +115,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleLinkClick(item.href)}
                   className={cn(
                     "group relative overflow-hidden p-4 rounded-xl",
                     "hover:text-primary hover:bg-primary/5",

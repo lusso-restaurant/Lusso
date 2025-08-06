@@ -118,14 +118,14 @@ export const Header: React.FC<HeaderProps> = ({
     fontWeight: getFontWeight('regular'),
     background: `linear-gradient(135deg, 
       ${getSemanticColor('text-primary')} 0%, 
-      var(--brand-glossy-gold) 50%, 
-      ${getSemanticColor('text-primary')} 100%
+      var(--brand-glossy-gold) 40%, 
+      ${getSemanticColor('text-secondary')} 100%
     )`,
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundSize: '200% 100%',
-    backgroundPosition: '0% 50%',
+    backgroundPosition: '20% 50%',
     letterSpacing: '0.15em',
     lineHeight: 1.2,
     textShadow: 'none',
@@ -297,6 +297,17 @@ export const Header: React.FC<HeaderProps> = ({
                 transparent 40%
               );
             }
+
+            /* Dark theme gradient positioning */
+            [data-theme="dark"] .lusso-brand-title {
+              background-position: 60% 50%;
+            }
+
+            [data-theme="dark"] .lusso-brand-title:hover {
+              background-position: 80% 50%;
+            }
+
+
 
             [data-theme="dark"] .lusso-header::after {
               background: linear-gradient(

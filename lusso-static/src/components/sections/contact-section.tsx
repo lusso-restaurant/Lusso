@@ -4,14 +4,18 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { getFontFamily } from '@/lib/design-system';
 
-export function ContactSection() {
+interface ContactSectionProps {
+  id?: string;
+}
+
+export function ContactSection({ id }: ContactSectionProps) {
   const contactInfo = [
     {
       title: "Telefon",
-      value: "+40 XXX XXX XXX",
+      value: "+40 741 234 567",
       description: "Apelați pentru rezervări",
       icon: "📞",
-      action: "tel:+40XXXXXXXXX"
+      action: "tel:+40741234567"
     },
     {
       title: "Locație",
@@ -37,7 +41,7 @@ export function ContactSection() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section id={id} className="py-20 px-4 sm:px-6 lg:px-8 relative">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-[#D4AF37]/5 to-background/50" />
       
@@ -149,7 +153,7 @@ export function ContactSection() {
                     fontFamily: getFontFamily('display')
                   }}
                 >
-                  +40 XXX XXX XXX
+                  +40 741 234 567
                 </div>
                 <p 
                   className="text-foreground/80"
@@ -174,7 +178,7 @@ export function ContactSection() {
                   transition-all duration-300
                   hover:scale-105
                 "
-                onClick={() => window.open('tel:+40XXXXXXXXX', '_self')}
+                onClick={() => window.open('tel:+40741234567', '_self')}
               >
                 Rezervă Acum
               </Button>

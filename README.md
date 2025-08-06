@@ -9,15 +9,16 @@ The Lusso restaurant website is a luxury dining web experience built with an **u
 ## 📊 Current Project Status
 
 | Component | Status | Description |
-|-----------|--------|--------------|
+|-----------|--------|-------------|
 | Design System | ✅ Complete | Ultra-modular design system with theme switching |
-| Navigation System | ✅ Complete | Dynamic header, mobile navigation, menu integration |
+| Navigation System | ✅ Complete | Dynamic header, mobile navigation, section anchors |
+| Order Functionality | ✅ Complete | Dedicated OrderSection with phone redirect |
 | TypeScript Integration | ✅ Complete | Full type safety with proper interfaces |
-| Mobile Navigation | ✅ Complete | Shadcn Sheet-based mobile menu with responsive behavior |
-| Menu Integration | ✅ Complete | Menu categories integrated with header system |
+| Mobile Navigation | ✅ Complete | Shadcn Sheet-based mobile menu with smooth scrolling |
+| Section Navigation | ✅ Complete | Smooth scrolling to homepage sections |
 | GitHub Pages Deployment | ✅ Complete | Automated CI/CD with static export |
 
-**Overall Status**: ✅ **Production Ready** - Complete navigation system with TypeScript integration and mobile-first design.
+**Overall Status**: ✅ **Production Ready** - Complete navigation system with order functionality, section anchors, and mobile-first design.
 
 ## 🏗️ Architecture Foundation
 
@@ -128,19 +129,32 @@ Based on comprehensive research, we have identified and documented:
 ### **Navigation & Layout** ✅
 - **Dynamic Header System**: Smart header that integrates menu categories when on menu page with sticky behavior
 - **Header Component**: Glassmorphism header with interactive mouse tracking, grid layout, and premium typography
-- **Mobile Navigation**: Complete mobile navigation using Shadcn Sheet with proper TypeScript interfaces
+- **Mobile Navigation**: Complete mobile navigation using Shadcn Sheet with proper TypeScript interfaces and smooth scrolling
 - **Menu Navigation**: Category navigation with disableSticky prop and header integration
-- **Main Navigation**: Desktop navigation with dynamic styling and accessibility features
+- **Main Navigation**: Desktop navigation with section anchors ("Acasă", "Meniu", "Povestea", "Comandă", "Contact")
+- **Section Navigation**: Smooth scrolling to homepage sections with proper offset handling
 - **Background System**: Aurora background with proper layer hierarchy
 
-### **Content & Menu**
-- Hero section with video/image backgrounds
-- Menu display with category tabs and filtering
-- Gallery components with lightbox functionality
+### **Order & Contact System** ✅
+- **OrderSection Component**: Dedicated ordering functionality with phone redirect (+40 741 234 567)
+- **Hero CTA**: "Comandă" button in hero section with phone call functionality
+- **Contact Integration**: Unified phone number across all contact points
+- **Dual Functionality**: Separate sections for orders and reservations
+- **Mobile Optimization**: Touch-optimized phone call buttons
 
-### **Contact & Information**
-- Contact modal with phone number and business info
-- Direct calling functionality for mobile devices
+### **Content & Menu**
+- **Hero Section**: Landing experience with "Comandă" CTA button
+- **Story Section**: Restaurant narrative with section anchor (#story)
+- **Culinary Section**: Restaurant's culinary approach (#culinary)
+- **Experience Section**: Dining experience details (#experience)
+- Menu display with category tabs and filtering (ready for implementation)
+- Gallery components with lightbox functionality (ready for implementation)
+
+### **Contact & Information** ✅
+- **Contact Section**: Phone number, business info, and reservations (#contact)
+- **Order Section**: Dedicated ordering functionality (#order)
+- **Direct Calling**: Phone redirect functionality for mobile devices
+- **Standardized Phone**: +40 741 234 567 across all components
 - Business hours, location, and contact details display
 
 ### **Mobile-First Features**
