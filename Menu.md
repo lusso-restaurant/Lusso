@@ -806,6 +806,7 @@ Glucide: 5.95g (din care zaharuri: 2.5g)
 Proteine: 1.26g  
 Sare: 0.02g (per 100g)
 
+# SALATA
 ## SALATA DE TON
 
 400g | 32 lei  
@@ -860,6 +861,7 @@ Sare: 0.42g (per 100g)
 
 **Alergeni:** **Lapte**
 
+# BURGER
 ## BURGER SMASH
 
 300g | 40 lei  
@@ -896,6 +898,7 @@ Sare: 1.13g (per 100g)
 
 **Alergeni:** **Gluten**, **Lapte**
 
+# SANDWICH
 ## SANDWICH CEAFA DE PORC
 
 250g | 35 lei  
@@ -932,6 +935,7 @@ Sare: 2.95g (per 100g)
 
 **Alergeni:** **Gluten**
 
+# MENIU
 ## MENIU CEAFA DE PORC, CARTOFI PRAJITI, SALATA, SOSURI, CHIFLA
 
 200g | 38 lei  
@@ -1018,6 +1022,7 @@ Glucide: 3.5g (din care zaharuri: 1.4g)
 Proteine: 11.8g  
 Sare: 0.76g (per 100g)
 
+# SEMIPREPARATE
 ## *CARNE DE MIDII
 
 100g | 18 lei  
@@ -1108,6 +1113,7 @@ Sare: 1.36g (per 100g)
 
 **Alergeni:** **Lapte**, **Gluten**, **OU**
 
+# DIVERSE
 ## CHIFLA
 
 50g | 2 lei  
@@ -1149,6 +1155,7 @@ MUSTAR, KECHUP, SOS DE MAIONEZA, TZATZIKI
 
 **Alergeni:** **MUSTAR**, **OU**
 
+# BAR
 ## CAPUCCINO
 
 150ml | 12 lei
@@ -1191,6 +1198,7 @@ Fibre: 0.1g
 
 20ml | 10 lei
 
+# RACORITOARE
 ## 3 CENTS
 
 200ml | 15 lei
@@ -1252,6 +1260,7 @@ Fibre: 0.1g
 Ingrediente:  
 Apa, Lamaie, Menta, Zahar
 
+# BERE
 ## BERE AMSTEL
 
 330ml | 15 lei
@@ -1287,7 +1296,7 @@ Apa, Lamaie, Menta, Zahar
 ## BERE STRONGBOW
 
 17 lei
-
+# VIN
 ## VIN RECAS IMPLICIT
 
 750ml | 120 lei
@@ -1368,6 +1377,7 @@ Apa, Lamaie, Menta, Zahar
 
 750ml | 1600 lei
 
+# ALCOOLICE
 ## CONIAC MARTEL XO
 
 50ml | 100 lei

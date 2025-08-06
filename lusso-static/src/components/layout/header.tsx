@@ -10,15 +10,19 @@ import {
   getFontWeight 
 } from '@/lib/design-system';
 import { ThemeSwitch } from '@/components/ui/theme-switch';
+import { MobileNavigation } from '@/components/navigation/mobile-navigation';
 
-interface LussoHeaderProps {
+interface HeaderProps {
   title?: string;
   children?: React.ReactNode;
   className?: string;
   showEffects?: boolean;
+  menuCategories?: { id: string; name: string; }[];
+  activeCategory?: string;
+  onCategoryChange?: (categoryId: string) => void;
 }
 
-export const Header: React.FC<LussoHeaderProps> = ({
+export const Header: React.FC<HeaderProps> = ({
   title = "LUSSO",
   children,
   className = "",
@@ -27,7 +31,6 @@ export const Header: React.FC<LussoHeaderProps> = ({
   const headerRef = useRef<HTMLElement>(null);
   const animationRef = useRef<number>(0);
   const lastMoveTime = useRef<number>(0);
-
   // Optimized mouse tracking with throttling
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const now = Date.now();
@@ -98,14 +101,14 @@ export const Header: React.FC<LussoHeaderProps> = ({
   };
 
   const contentStyles: React.CSSProperties = {
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: '1fr auto 1fr',
     alignItems: 'center',
-    justifyContent: 'space-between',
     maxWidth: '1400px',
     margin: '0 auto',
     position: 'relative',
     zIndex: 10,
-    gap: getSpacing('8'),
+    gap: getSpacing('4'),
   };
 
   // Premium brand typography
@@ -169,6 +172,7 @@ export const Header: React.FC<LussoHeaderProps> = ({
         aria-label="LUSSO Navigation"
       >
         <div style={contentStyles}>
+          {/* Left: Brand Title */}
           <h1 
             style={titleStyles}
             className="lusso-brand-title"
@@ -176,10 +180,15 @@ export const Header: React.FC<LussoHeaderProps> = ({
           >
             {title}
           </h1>
+          
+          {/* Center: Desktop Navigation */}
           {children && (
             <nav 
-              style={navStyles}
-              className="lusso-navigation"
+              style={{
+                ...navStyles,
+                justifyContent: 'center',
+              }}
+              className="lusso-navigation hidden md:flex"
               role="navigation"
               aria-label="Main navigation"
             >
@@ -187,12 +196,27 @@ export const Header: React.FC<LussoHeaderProps> = ({
             </nav>
           )}
           
-          {/* Theme Switch - Positioned on the right */}
-          <div style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
-            <ThemeSwitch iconOnly />
+          {/* Right: Theme Switch + Mobile Menu */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'flex-end', 
+            gap: getSpacing('3')
+          }}>
+            {/* Desktop Theme Switch */}
+            <div className="hidden md:block">
+              <ThemeSwitch iconOnly />
+            </div>
+            
+            {/* Mobile Navigation */}
+            <div className="block md:hidden">
+              <MobileNavigation />
+            </div>
           </div>
         </div>
       </header>
+
+
 
       {/* Enhanced LUSSO Header Styles */}
       <style dangerouslySetInnerHTML={{
@@ -319,7 +343,7 @@ export const Header: React.FC<LussoHeaderProps> = ({
             }
 
             /* Mobile optimizations */
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
               .lusso-header {
                 margin: ${getSpacing('3')};
                 width: calc(100% - 1.5rem);
@@ -327,12 +351,20 @@ export const Header: React.FC<LussoHeaderProps> = ({
               }
               
               .lusso-brand-title {
-                font-size: clamp(1.5rem, 5vw, 2rem);
+                font-size: clamp(1.25rem, 4vw, 1.75rem);
+                letter-spacing: 0.1em;
               }
-
+            }
+            
+            /* Tablet optimizations */
+            @media (max-width: 1024px) and (min-width: 769px) {
               .lusso-navigation {
                 gap: ${getSpacing('4')};
-                font-size: 0.875rem;
+                font-size: 0.9rem;
+              }
+              
+              .lusso-navigation a {
+                padding: 0.4rem 0.8rem;
               }
             }
 
@@ -346,6 +378,12 @@ export const Header: React.FC<LussoHeaderProps> = ({
               [data-theme="dark"] .lusso-header {
                 background-color: rgba(0, 0, 0, 0.95);
               }
+            }
+
+            /* Floating menu dark theme support */
+            [data-theme="dark"] .floating-menu {
+              background-color: rgba(0, 0, 0, 0.95) !important;
+              border-color: rgba(255, 255, 255, 0.1) !important;
             }
           }
         `
