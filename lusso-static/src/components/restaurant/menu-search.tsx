@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { MenuItem, searchItems } from "@/data/menu";
+import { SearchResult, searchMenuItems } from "@/data/menu";
 import { MenuCard } from "./menu-card";
 import { cn } from "@/lib/utils";
 
@@ -18,12 +18,12 @@ export const MenuSearch: React.FC<MenuSearchProps> = ({
   className
 }) => {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<MenuItem[]>([]);
+  const [results, setResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
     if (query.trim().length >= 2) {
-      const searchResults = searchItems(query.trim());
+      const searchResults = searchMenuItems(query.trim());
       setResults(searchResults);
       setIsSearching(true);
     } else {
@@ -80,10 +80,10 @@ export const MenuSearch: React.FC<MenuSearchProps> = ({
 
           {results.length > 0 ? (
             <div className="grid gap-4 md:gap-6">
-              {results.map((item) => (
+              {results.map((result) => (
                 <MenuCard
-                  key={`${item.id}-search`}
-                  item={item}
+                  key={`${result.item.id}-search`}
+                  item={result.item}
                   className="w-full"
                 />
               ))}

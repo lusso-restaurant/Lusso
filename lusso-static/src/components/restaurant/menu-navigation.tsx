@@ -40,13 +40,10 @@ export const MenuNavigation: React.FC<MenuNavigationProps> = ({
   const scrollToCategory = (categoryId: string) => {
     const element = document.getElementById(categoryId);
     if (element) {
-      const headerOffset = 120; // Account for sticky menu navigation
-      const elementPosition = element.offsetTop;
-      const offsetPosition = elementPosition - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+      // Use scrollIntoView to respect CSS scroll-margin-top (scroll-mt-32 class)
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
       });
     }
     onCategoryChange?.(categoryId);

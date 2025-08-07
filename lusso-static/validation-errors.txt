@@ -1,0 +1,5 @@
+Missing item in menu.ts: "*CÂRNAŢI SÂRBEŞTI" (id: carnai-sarbeti)
+Missing item in menu.ts: "MENIU CEAFĂ DE PORC, CARTOFI PRĂJIŢI, SALATĂ, SOSURI, CHIFLĂ" (id: meniu-ceafa-de-porc-cartofi-prajii-salata-sosuri-chifla)
+Missing item in menu.ts: "MENIU MICI (3 BUC), CARTOFI PRĂJIŢI, SALATĂ" (id: meniu-mici-3-buc-cartofi-prajii-salata)
+Missing item in menu.ts: "MENIU CÂRNAŢI SÂRBEŞTI" (id: meniu-carnai-sarbeti)
+Missing item in menu.ts: "COASTE PORC GRILL CU CARTOFI PRĂJIŢI" (id: coaste-porc-grill-cu-cartofi-prajii)

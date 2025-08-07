@@ -96,7 +96,7 @@ Proteine: 22.59g
 Sare: 1.54g (per 100g)
 
 # PIZZA 
-## PIZZA QUOATTRO FORMAGGI
+## PIZZA QUATTRO FORMAGGI
 
 450g | 42 lei  
 (0E | 0.87g sare | 1.04g zaharuri) / 100g
@@ -331,7 +331,7 @@ Sare: 0.34g (per 100g)
 
 **Alergeni:** **Pește**, **Gluten**, **Ou**
 
-## PASTE QUATRO FORMAGGI
+## PASTE QUATTRO FORMAGGI
 
 350g | 40 lei  
 (3E | 0.59g sare | 1.62g zaharuri) / 100g
@@ -482,7 +482,7 @@ Glucide: 2g (din care zaharuri: 0g)
 Proteine: 20g  
 Sare: 0g (per 100g)
 
-## *CARNATI SARBESTI
+## *CÂRNAŢI SÂRBEŞTI
 
 100g | 15 lei  
 (0E | 2.2g sare | 1.6g zaharuri) / 100g
@@ -618,7 +618,7 @@ Sare: 0.18g (per 100g)
 
 **Alergeni:** **Lapte**
 
-## LEGUME LA GRATAR
+## LEGUME LA GRĂTAR
 
 200g | 15 lei  
 (0E | 0.5g sare | 1.85g zaharuri) / 100g
@@ -652,7 +652,7 @@ Sare: 1.1g (per 100g)
 
 **Alergeni:** **Lapte**
 
-## *SPARANGHEL LA GRATAR
+## *SPARANGHEL LA GRĂTAR
 
 150g | 15 lei  
 (0E | 0.32g sare | 2.1g zaharuri) / 100g
@@ -790,7 +790,7 @@ Glucide: 4.35g (din care zaharuri: 0.93g)
 Proteine: 0.79g  
 Sare: 0g (per 100g)
 
-## SALATA DE VARZA
+## SALATĂ DE VARZĂ
 
 200g | 10 lei  
 (0E | 0.02g sare | 2.5g zaharuri) / 100g
@@ -806,8 +806,8 @@ Glucide: 5.95g (din care zaharuri: 2.5g)
 Proteine: 1.26g  
 Sare: 0.02g (per 100g)
 
-# SALATA
-## SALATA DE TON
+# SALATE
+## SALATĂ DE TON
 
 400g | 32 lei  
 (0E | 0.56g sare | 0.92g zaharuri) / 100g
@@ -825,7 +825,7 @@ Sare: 0.56g (per 100g)
 
 **Alergeni:** **Peste**
 
-## SALATA CAESAR
+## SALATĂ CAESAR
 
 250g | 32 lei  
 (0E | 2.63g sare | 1.21g zaharuri) / 100g
@@ -861,7 +861,7 @@ Sare: 0.42g (per 100g)
 
 **Alergeni:** **Lapte**
 
-# BURGER
+# BURGERI
 ## BURGER SMASH
 
 300g | 40 lei  
@@ -936,7 +936,7 @@ Sare: 2.95g (per 100g)
 **Alergeni:** **Gluten**
 
 # MENIU
-## MENIU CEAFA DE PORC, CARTOFI PRAJITI, SALATA, SOSURI, CHIFLA
+## MENIU CEAFĂ DE PORC, CARTOFI PRĂJIŢI, SALATĂ, SOSURI, CHIFLĂ
 
 200g | 38 lei  
 (0E | 0.31g sare | 0.29g zaharuri) / 100g
@@ -954,7 +954,7 @@ Sare: 0.31g (per 100g)
 
 **Alergeni:** **Gluten**
 
-## MENIU MICI (3 BUC), CARTOFI PRAJITI, SALATA
+## MENIU MICI (3 BUC), CARTOFI PRĂJIŢI, SALATĂ
 
 200g | 35 lei  
 (0E | 0.7g sare | 0.48g zaharuri) / 100g
@@ -972,7 +972,7 @@ Sare: 0.7g (per 100g)
 
 **Alergeni:** **Gluten**
 
-## MENIU CARNATI SARBESTI
+## MENIU CÂRNAŢI SÂRBEŞTI
 
 200g | 35 lei  
 (0E | 1.22g sare | 0.52g zaharuri) / 100g
@@ -990,7 +990,7 @@ Sare: 1.22g (per 100g)
 
 **Alergeni:** **Gluten**
 
-## COASTE PORC GRILL CU CARTOFI PRAJITI
+## COASTE PORC GRILL CU CARTOFI PRĂJIŢI
 
 400g/100g | 60 lei  
 (0E | 1.25g sare | 0.42g zaharuri) / 100g
@@ -1177,7 +1177,7 @@ Proteine: 2.8g
 
 ## LATTE MACCHIATO
 
-14 lei
+300ml | 14 lei
 
 ---
 
@@ -1319,7 +1319,7 @@ Apa, Lamaie, Menta, Zahar
 
 ## VIN MURFATLAR AEROSOLI
 
-80 lei
+750ml | 80 lei
 
 ## VIN MURFATLAR AREZAN
 
