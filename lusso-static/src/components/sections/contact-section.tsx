@@ -35,9 +35,9 @@ export function ContactSection({ id }: ContactSectionProps) {
 
   const businessHours = [
     { day: "Luni - Duminică", hours: "09:00 - 00:00" },
-    { day: "Micul dejun", hours: "09:00 - 11:00" },
-    { day: "Prânz", hours: "12:00 - 16:00" },
-    { day: "Cină", hours: "18:00 - 00:00" }
+    { day: "Micul dejun", hours: "09:00 - 12:00" },
+    { day: "Prânz", hours: "12:00 - 17:00" },
+    { day: "Cină", hours: "17:00 - 00:00" }
   ];
 
   return (
