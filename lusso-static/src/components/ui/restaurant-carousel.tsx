@@ -35,6 +35,8 @@ export function RestaurantCarousel({
 }: RestaurantCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
 
   // Auto-play functionality
   useEffect(() => {
@@ -63,9 +65,35 @@ export function RestaurantCarousel({
 
   return (
     <div 
-      className={`relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden group ${className}`}
+      className={`relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden group select-none ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={(e) => {
+        if (e.touches && e.touches.length > 0) {
+          setTouchStartX(e.touches[0].clientX);
+          setTouchStartY(e.touches[0].clientY);
+          setIsHovered(true);
+        }
+      }}
+      onTouchEnd={(e) => {
+        setIsHovered(false);
+        if (touchStartX === null || touchStartY === null) return;
+        const touch = e.changedTouches && e.changedTouches[0];
+        if (!touch) return;
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        const horizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+        const threshold = 40; // px
+        if (horizontalSwipe && Math.abs(deltaX) > threshold) {
+          if (deltaX > 0) {
+            goToPrevious();
+          } else {
+            goToNext();
+          }
+        }
+        setTouchStartX(null);
+        setTouchStartY(null);
+      }}
     >
       {/* Main Image Container */}
       <div className="relative w-full h-full">

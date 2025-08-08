@@ -36,7 +36,7 @@ export function StorySection({ id }: StorySectionProps) {
                   fontFamily: getFontFamily('display')
                 }}
               >
-                Născut în 2024
+                Născut în 2025
               </h3>
               
               <div 

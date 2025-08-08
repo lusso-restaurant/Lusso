@@ -16,7 +16,7 @@ La Lusso, fiecare farfurie spune o poveste – despre gust, eleganță și bucur
 
 **Despre noi**
 
-Lusso s-a născut în 2024, fiind un spațiu creat cu suflet, unde fiecare detaliu contează. Am vrut să aducem în Eforie Nord o experiență completă, care combină mâncarea de calitate cu eleganța, relaxarea și bucuria momentelor simple. Dar Lusso nu înseamnă doar mâncare – înseamnă și acel moment de respiro, când savurezi o cafea de specialitate într-un loc frumos, elegant și liniștit, chiar în inima stațiunii. Un spațiu unde te simți bine, fie că vii pentru o întâlnire, o pauză în drum spre plajă sau doar pentru tine.
+Lusso s-a născut în 2025, fiind un spațiu creat cu suflet, unde fiecare detaliu contează. Am vrut să aducem în Eforie Nord o experiență completă, care combină mâncarea de calitate cu eleganța, relaxarea și bucuria momentelor simple. Dar Lusso nu înseamnă doar mâncare – înseamnă și acel moment de respiro, când savurezi o cafea de specialitate într-un loc frumos, elegant și liniștit, chiar în inima stațiunii. Un spațiu unde te simți bine, fie că vii pentru o întâlnire, o pauză în drum spre plajă sau doar pentru tine.
 
 Am vrut să aducem ceva cu adevărat diferit în Eforie – un colț de rafinament și confort, unde totul e făcut cu drag și grijă pentru detalii. Și pentru asta, am ales cel mai fain grătar Josper pentru gustul desăvârșit al preparatelor noastre și cea mai bună cafea Nespresso, ca să începi (sau să închei) ziua exact cum meriți.
 

@@ -226,7 +226,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({ className, f
                 letterSpacing: '0.05em',
               }}
             >
-              © 2024 LUSSO Restaurant
+              © 2025 LUSSO Restaurant
             </p>
           </div>
         </SheetContent>

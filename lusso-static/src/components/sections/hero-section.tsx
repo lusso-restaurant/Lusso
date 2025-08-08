@@ -3,10 +3,13 @@
 import { Button } from '@/components/ui/button';
 import { RestaurantCarousel } from '@/components/ui/restaurant-carousel';
 import { getFontFamily, getSemanticColor } from '@/lib/design-system';
+import { useRouter } from 'next/navigation';
 
 export function HeroSection() {
+  const router = useRouter();
+  
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8">
       {/* Liquid Glass Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-black/10 backdrop-blur-[1px]" />
       
@@ -57,7 +60,7 @@ export function HeroSection() {
         
         {/* Description */}
         <p 
-          className="text-lg sm:text-xl mb-12 text-foreground/80 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl mb-8 text-foreground/80 max-w-2xl mx-auto leading-relaxed"
           style={{
             fontFamily: getFontFamily('sans')
           }}
@@ -67,13 +70,13 @@ export function HeroSection() {
         </p>
         
         {/* CTA Buttons */}
-        <div className="flex flex-row gap-4 justify-center items-center">
+        <div className="flex flex-row flex-wrap gap-4 justify-center items-center w-full max-w-md mx-auto sm:max-w-none">
           {/* Meniu Button - Modern Glass Morphism Style */}
           <Button 
             size="lg"
             variant="outline"
             className="
-              px-8 py-4 text-lg font-semibold
+              px-6 py-4 text-lg font-semibold w-auto flex-shrink-0 min-w-0
               bg-transparent
               border-2 border-[#D4AF37]
               hover:border-[#FFD700]
@@ -92,7 +95,7 @@ export function HeroSection() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}
-            onClick={() => window.location.href = '/meniu'}
+            onClick={() => router.push('/meniu')}
           >
             <span 
               className="relative z-10"
@@ -112,7 +115,7 @@ export function HeroSection() {
           <Button 
             size="lg"
             className="
-              px-8 py-4 text-lg font-semibold
+              px-6 py-4 text-lg font-semibold w-auto flex-shrink-0 min-w-0
               bg-gradient-to-r from-[#D4AF37] to-[#B2935B]
               hover:from-[#FFD700] hover:to-[#D4AF37]
               text-black
@@ -134,12 +137,14 @@ export function HeroSection() {
           </Button>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-[#D4AF37]/50 rounded-full flex justify-center">
+        {/* Scroll Indicator (hidden on small screens to keep CTAs higher) */}
+        <div className="hidden md:flex justify-center mb-8">
+          <div className="w-6 h-10 border-2 border-[#D4AF37]/50 rounded-full flex justify-center animate-bounce">
             <div className="w-1 h-3 bg-[#D4AF37] rounded-full mt-2 animate-pulse" />
           </div>
         </div>
+        
+
       </div>
     </section>
   );
