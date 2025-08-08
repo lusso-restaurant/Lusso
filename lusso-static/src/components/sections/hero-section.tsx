@@ -58,19 +58,8 @@ export function HeroSection() {
           gust, estetică, atmosferă
         </p>
         
-        {/* Description */}
-        <p 
-          className="text-lg sm:text-xl mb-8 text-foreground/80 max-w-2xl mx-auto leading-relaxed"
-          style={{
-            fontFamily: getFontFamily('sans')
-          }}
-        >
-          Descoperiți o experiență culinară completă în inima Eforie Nord, 
-          unde fiecare masă devine o celebrare a gustului autentic și rafinamentului.
-        </p>
-        
         {/* CTA Buttons */}
-        <div className="flex flex-row flex-wrap gap-4 justify-center items-center w-full max-w-md mx-auto sm:max-w-none">
+        <div className="flex flex-row flex-wrap gap-4 justify-center items-center w-full max-w-md mx-auto sm:max-w-none mb-8">
           {/* Meniu Button - Modern Glass Morphism Style */}
           <Button 
             size="lg"
@@ -136,6 +125,17 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700]/20 to-[#D4AF37]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Button>
         </div>
+        
+        {/* Description */}
+        <p 
+          className="text-lg sm:text-xl mb-8 text-foreground/80 max-w-2xl mx-auto leading-relaxed"
+          style={{
+            fontFamily: getFontFamily('sans')
+          }}
+        >
+          Descoperiți o experiență culinară completă în inima Eforie Nord, 
+          unde fiecare masă devine o celebrare a gustului autentic și rafinamentului.
+        </p>
         
         {/* Scroll Indicator (hidden on small screens to keep CTAs higher) */}
         <div className="hidden md:flex justify-center mb-8">
