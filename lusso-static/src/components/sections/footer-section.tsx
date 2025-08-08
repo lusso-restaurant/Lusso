@@ -7,9 +7,9 @@ export function FooterSection() {
     {
       title: "Contact",
       links: [
-        { label: "Telefon: +40 741 234 567", href: "tel:+40741234567" },
+        { label: "Telefon: +40 730 629 628", href: "tel:+40730629628" },
         { label: "Eforie Nord, România", href: null },
-        { label: "Program: 07:00 - 23:00", href: null }
+        { label: "Program: 09:00 - 00:00", href: null }
       ]
     },
     {

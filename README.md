@@ -136,7 +136,7 @@ Based on comprehensive research, we have identified and documented:
 - **Background System**: Aurora background with proper layer hierarchy
 
 ### **Order & Contact System** ✅
-- **OrderSection Component**: Dedicated ordering functionality with phone redirect (+40 741 234 567)
+- **OrderSection Component**: Dedicated ordering functionality with phone redirect (+40 730 629 628)
 - **Hero CTA**: "Comandă" button in hero section with phone call functionality
 - **Contact Integration**: Unified phone number across all contact points
 - **Dual Functionality**: Separate sections for orders and reservations
@@ -154,7 +154,7 @@ Based on comprehensive research, we have identified and documented:
 - **Contact Section**: Phone number, business info, and reservations (#contact)
 - **Order Section**: Dedicated ordering functionality (#order)
 - **Direct Calling**: Phone redirect functionality for mobile devices
-- **Standardized Phone**: +40 741 234 567 across all components
+- **Standardized Phone**: +40 730 629 628 across all components
 - Business hours, location, and contact details display
 
 ### **Mobile-First Features**

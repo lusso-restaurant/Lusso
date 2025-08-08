@@ -55,8 +55,7 @@ export function StorySection({ id }: StorySectionProps) {
                 <p className="text-lg">
                   Fiecare detaliu a fost gândit cu atenție, de la selecția 
                   ingredientelor premium până la atmosfera rafinată care 
-                  înconjoară fiecare masă. Aici, <em className="text-[#D4AF37]">mâncarea 
-                  este savurată, nu doar consumată</em>.
+                  înconjoară fiecare masă.
                 </p>
                 
                 <p className="text-lg">
@@ -78,7 +77,7 @@ export function StorySection({ id }: StorySectionProps) {
                       fontFamily: getFontFamily('display')
                     }}
                   >
-                    2024
+                    2025
                   </div>
                   <p 
                     className="text-xl text-foreground/80"

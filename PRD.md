@@ -128,7 +128,7 @@ All design system specifications, including colors, typography, and spacing, are
 #### Order Section ✅ **NEW**
 - **Purpose**: Dedicated ordering functionality
 - **Content**: Order call-to-action with phone redirect
-- **Phone Number**: +40 741 234 567 (standardized format)
+- **Phone Number**: +40 730 629 628 (standardized format)
 - **Functionality**: Direct phone call initiation via `tel:` links
 - **Section ID**: `#order` for navigation anchor
 - **Integration**: Accessible via "Comandă" navigation item
@@ -143,14 +143,14 @@ All design system specifications, including colors, typography, and spacing, are
 - **Information**: Phone number prominently displayed
 - **Language**: Romanian content
 - **Details**: Essential business information, reservations
-- **Phone Number**: +40 741 234 567 (standardized format)
+- **Phone Number**: +40 730 629 628 (standardized format)
 - **Section ID**: `#contact` for navigation anchor
 
 ### 5.4 Communication Strategy
 
 #### Phone-Based Contact
 - **Primary**: Phone calls for both reservations and orders
-- **Phone Number**: +40 741 234 567 (standardized across all components)
+- **Phone Number**: +40 730 629 628 (standardized across all components)
 - **Reservations**: "Rezervă Acum" buttons in contact section
 - **Orders**: "Comandă" buttons in hero and order sections
 - **Secondary**: WhatsApp messages on same number

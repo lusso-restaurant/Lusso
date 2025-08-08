@@ -104,7 +104,7 @@ Dedicated ordering functionality with phone redirect:
 // src/components/sections/order-section.tsx
 export const OrderSection: React.FC = () => {
   const handleOrderCall = () => {
-    window.open('tel:+40741234567', '_self');
+    window.open('tel:+40730629628', '_self');
   };
 
   return (
@@ -125,7 +125,7 @@ export const OrderSection: React.FC = () => {
           Sună pentru Comandă
         </Button>
         <p className="text-sm text-text-secondary mt-4">
-          +40 741 234 567
+          +40 730 629 628
         </p>
       </div>
     </section>

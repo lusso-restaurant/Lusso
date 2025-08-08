@@ -361,7 +361,7 @@ export const Header: React.FC<HeaderProps> = ({
                 padding: ${getSpacing('4')} ${getSpacing('5')};
               }
               
-              .lusso-brand-title {
+              .lusso-header > * .lusso-brand-title {
                 font-size: clamp(1.25rem, 4vw, 1.75rem);
                 letter-spacing: 0.1em;
               }

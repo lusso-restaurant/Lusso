@@ -2408,8 +2408,29 @@ export const getItemById = (categoryId: string, itemId: string): MenuItem | unde
 };
 
 /**
+ * Normalizes text by removing diacritics and converting to lowercase.
+ * This allows for diacritic-insensitive search (e.g., "branza" will match "brânză").
+ * @param text The text to normalize.
+ * @returns The normalized text without diacritics.
+ */
+const normalizeDiacritics = (text: string): string => {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove combining diacritical marks
+    .replace(/ă/g, 'a')
+    .replace(/â/g, 'a')
+    .replace(/î/g, 'i')
+    .replace(/ș/g, 's')
+    .replace(/ț/g, 't')
+    .replace(/ş/g, 's') // Alternative s with cedilla
+    .replace(/ţ/g, 't'); // Alternative t with cedilla
+};
+
+/**
  * Searches menu items based on a query string.
  * This improved function is more efficient and provides richer results.
+ * Now supports diacritic-insensitive search.
  * @param query The search string entered by the user.
  * @returns An array of SearchResult objects, each containing the matched item and its category info.
  */
@@ -2420,8 +2441,8 @@ export const searchMenuItems = (query: string): SearchResult[] => {
     return [];
   }
 
-  // Normalize the query and split it into individual search words (tokens).
-  const searchTokens = trimmedQuery.toLowerCase().split(' ').filter(token => token.length > 0);
+  // Normalize the query (remove diacritics) and split it into individual search words (tokens).
+  const searchTokens = normalizeDiacritics(trimmedQuery).split(' ').filter(token => token.length > 0);
 
   // Flatten the menu data into a single array of items, each with its category info.
   // This is more efficient than using nested loops.
@@ -2436,7 +2457,8 @@ export const searchMenuItems = (query: string): SearchResult[] => {
   // Filter the flattened list of items.
   return allItemsWithCategory.filter(({ item }) => {
     // Combine the item's name and ingredients into a single searchable string.
-    const searchableText = (item.name + ' ' + item.ingredients).toLowerCase();
+    // Normalize the searchable text to remove diacritics for comparison.
+    const searchableText = normalizeDiacritics(item.name + ' ' + item.ingredients);
     
     // Check if every search token is present in the searchable text.
     return searchTokens.every(token => searchableText.includes(token));

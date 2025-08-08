@@ -12,21 +12,21 @@ export function ContactSection({ id }: ContactSectionProps) {
   const contactInfo = [
     {
       title: "Telefon",
-      value: "+40 741 234 567",
+      value: "+40 730 629 628",
       description: "Apelați pentru rezervări",
       icon: "📞",
-      action: "tel:+40741234567"
+      action: "tel:+40730629628"
     },
     {
       title: "Locație",
       value: "Eforie Nord",
       description: "Litoralul Românesc",
       icon: "📍",
-      action: null
+      action: "https://maps.app.goo.gl/kwd3FCnPhyqNa151A"
     },
     {
       title: "Program",
-      value: "07:00 - 23:00",
+      value: "09:00 - 00:00",
       description: "Zilnic",
       icon: "🕐",
       action: null
@@ -34,10 +34,10 @@ export function ContactSection({ id }: ContactSectionProps) {
   ];
 
   const businessHours = [
-    { day: "Luni - Duminică", hours: "07:00 - 23:00" },
-    { day: "Micul dejun", hours: "07:00 - 11:00" },
+    { day: "Luni - Duminică", hours: "09:00 - 00:00" },
+    { day: "Micul dejun", hours: "09:00 - 11:00" },
     { day: "Prânz", hours: "12:00 - 16:00" },
-    { day: "Cină", hours: "18:00 - 23:00" }
+    { day: "Cină", hours: "18:00 - 00:00" }
   ];
 
   return (
@@ -73,7 +73,10 @@ export function ContactSection({ id }: ContactSectionProps) {
           {contactInfo.map((info, index) => (
             <Card 
               key={index}
-              className="backdrop-blur-lg bg-card/60 border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all duration-500 group hover:scale-105"
+              className={`backdrop-blur-lg bg-card/60 border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all duration-500 group hover:scale-105 ${
+                info.action && info.title === 'Locație' ? 'cursor-pointer' : ''
+              }`}
+              onClick={info.action && info.title === 'Locație' ? () => window.open(info.action!, '_blank') : undefined}
             >
               <CardHeader className="text-center pb-4">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -105,7 +108,7 @@ export function ContactSection({ id }: ContactSectionProps) {
                 >
                   {info.description}
                 </p>
-                {info.action && (
+                {info.action && info.title === 'Telefon' && (
                   <div className="mt-4">
                     <Button 
                       size="sm"
@@ -113,6 +116,20 @@ export function ContactSection({ id }: ContactSectionProps) {
                       onClick={() => window.open(info.action!, '_self')}
                     >
                       Apelează
+                    </Button>
+                  </div>
+                )}
+                {info.action && info.title === 'Locație' && (
+                  <div className="mt-4">
+                    <Button 
+                      size="sm"
+                      className="bg-[#D4AF37] hover:bg-[#FFD700] text-black"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(info.action!, '_blank');
+                      }}
+                    >
+                      Vezi pe Hartă
                     </Button>
                   </div>
                 )}
@@ -153,7 +170,7 @@ export function ContactSection({ id }: ContactSectionProps) {
                     fontFamily: getFontFamily('display')
                   }}
                 >
-                  +40 741 234 567
+                  +40 730 629 628
                 </div>
                 <p 
                   className="text-foreground/80"
@@ -178,7 +195,7 @@ export function ContactSection({ id }: ContactSectionProps) {
                   transition-all duration-300
                   hover:scale-105
                 "
-                onClick={() => window.open('tel:+40741234567', '_self')}
+                onClick={() => window.open('tel:+40730629628', '_self')}
               >
                 Rezervă Acum
               </Button>

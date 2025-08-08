@@ -118,7 +118,7 @@ export function OrderSection({ id }: OrderSectionProps) {
                     fontFamily: getFontFamily('display')
                   }}
                 >
-                  +40 741 234 567
+                  +40 730 629 628
                 </div>
                 <p 
                   className="text-foreground/80"
@@ -143,7 +143,7 @@ export function OrderSection({ id }: OrderSectionProps) {
                   transition-all duration-300
                   hover:scale-105
                 "
-                onClick={() => window.open('tel:+40741234567', '_self')}
+                onClick={() => window.open('tel:+40730629628', '_self')}
               >
                 <span className="mr-2">📞</span>
                 Comandă Acum

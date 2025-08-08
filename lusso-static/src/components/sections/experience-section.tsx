@@ -9,7 +9,7 @@ export function ExperienceSection({ id }: ExperienceSectionProps) {
   const experiences = [
     {
       title: "Micul Dejun",
-      time: "07:00 - 11:00",
+      time: "09:00 - 11:00",
       description: "Începeți ziua cu preparate proaspete și aromate, de la specialități locale până la clasicele internaționale.",
       highlight: "Cafea Nespresso & produse de patiserie"
     },
@@ -21,7 +21,7 @@ export function ExperienceSection({ id }: ExperienceSectionProps) {
     },
     {
       title: "Cina",
-      time: "18:00 - 23:00",
+      time: "18:00 - 00:00",
       description: "Experiența culinară completă în ambianța rafinată a serii, cu preparate premium și servicii de excepție.",
       highlight: "Meniu degustare & selecție de vinuri"
     }
