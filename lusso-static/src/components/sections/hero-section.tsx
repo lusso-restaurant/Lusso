@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { RestaurantCarousel } from '@/components/ui/restaurant-carousel';
 import { getFontFamily, getSemanticColor } from '@/lib/design-system';
 
 export function HeroSection() {
@@ -36,6 +37,11 @@ export function HeroSection() {
         >
           LUSSO
         </h1>
+        
+        {/* Restaurant Photo Carousel */}
+        <div className="mb-8 max-w-3xl mx-auto">
+          <RestaurantCarousel className="shadow-2xl" />
+        </div>
         
         {/* Tagline */}
         <p 

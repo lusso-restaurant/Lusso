@@ -19,7 +19,7 @@ export const THEME_NAMES: readonly ThemeName[] = ['light', 'dark'] as const;
 /**
  * Default theme configuration
  */
-export const DEFAULT_THEME: ThemeName = 'light';
+export const DEFAULT_THEME: ThemeName = 'dark';
 
 /**
  * localStorage key for theme persistence
