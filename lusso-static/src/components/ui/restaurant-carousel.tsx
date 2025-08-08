@@ -19,12 +19,12 @@ interface RestaurantCarouselProps {
 }
 
 const defaultImages = [
-  '/_Q2A3630.jpeg',
-  '/IMG_9525 (1).jpeg',
-  '/_Q2A3634.jpeg',
-  '/IMG_9498.PNG',
-  '/IMG_9499.jpeg',
-  '/IMG_9584.jpeg'
+  './_Q2A3630.jpeg',
+  './IMG_9525 (1).jpeg',
+  './_Q2A3634.jpeg',
+  './IMG_9498.PNG',
+  './IMG_9499.jpeg',
+  './IMG_9584.jpeg'
 ];
 
 export function RestaurantCarousel({
